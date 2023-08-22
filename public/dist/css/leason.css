@@ -1,0 +1,33 @@
+/* 
+    CSS (Cascading Style Sheet)
+    1. атрибут style
+    2. тэг <style> внутри раздела <head>
+    3. внешний css-файл
+ */
+
+ body {  /* Селектор элемента */
+    font-family: Verdana, Helvetica, Arial, sans-serif; /*sans-serif - рубленные шрифты, serif - шрифты с засечками*/
+    background-color: beige;
+} 
+* {   /* Универсальный селектор */
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2,h3 {
+    color: blue;
+    font-family: "Times New Roman", Times, serif;
+}
+#header {  /* Селектор идентификатора */
+    width: 75%;
+    margin: 10px;
+}
+
+.red {  /* Селектор класса */
+    color: red;
+}
+
+div h2 { /*  Селектор элемента h2. H2 который находится в нутри div закрасится  */
+    color: green;
+}
+
