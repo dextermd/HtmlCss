@@ -7,7 +7,7 @@
     <title>Second Page</title>
 </head>
 <body>
-    <div class="wrapper">
+    <div id="wrapper">
         <main> <!-- Левая основная часть страницы -->
             <section>
                 <div>
@@ -72,7 +72,6 @@
                 </div>
             </section>
         </main>
-
         <aside> <!-- Боковая правая часть страницы -->
             <nav>
                 <a href="#">Menu item 1</a> <br>
@@ -94,3 +93,37 @@
     </div>
 </body>
 </html>
+<style>
+    #wrapper {
+        width: 85%;
+        background-color: #F5F5DC;
+        margin: 0 auto;
+    }
+    h2 {
+        margin: 0;
+        font-family: Verdana, Arial, Helvetica, Arial, sans-serif;
+    }
+     body {
+        margin: 0; /* Обнуляем внутринние отступы для body */
+        padding: 0; /* Обнуляем внешнии отступы для body */
+     }
+     main {
+        width: 75%;
+        border-right: 2px solid gray;
+        float: left; /* Расположить блочный элемент main внутри родителя div слева */
+        padding-left: 1%;
+        padding-right: 1%;
+        padding-top: 1%;
+     }
+     aside {
+        width: 22%;
+        padding-top: 1%;
+        float: right; /* Расположить блочный элемент main внутри родителя div справа */
+     }
+     footer {
+        clear: both; /* Отменяем свойство float для footer */
+        border-top: 2px solid gray;
+        padding: 1em;
+        text-align: center;
+     }
+</style>

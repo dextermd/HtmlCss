@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background</title>
+</head>
+<body>
+    <h1>CSS фон</h1>
+    <div class="wrapper">
+        <h2>Добавим для элемента div фоновой картинки</h2>
+        <p>
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+            The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
+            content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem 
+            Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+            Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        </p>
+        <p>
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+            The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
+            content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem 
+            Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+            Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        </p>
+        <p>
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+            The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
+            content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem 
+            Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+            Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        </p>
+        <p>
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+            The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
+            content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem 
+            Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+            Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        </p>
+        <p>
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+            The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
+            content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem 
+            Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+            Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        </p>
+        <p>
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+            The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
+            content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem 
+            Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+            Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        </p>
+    </div>
+
+    <h2 class="hoverdemo">CSS: Прозрачность элементов, свойство <em>opacity</em></h2>
+    <img src="images/butterfly.png" alt="butterfly">
+    <img src="images/butterfly.png" alt="butterfly" class="opacityPicture">
+    <img src="images/butterfly.png" alt="butterfly" class="opacityHover ">
+
+    <h2>Css Градиент</h2>
+    <main>
+        <div id="one"></div>
+        <div id="two"></div>
+        <div id="three"></div>
+        <div id="four"></div>
+        <div id="five"></div>
+        <div id="six"></div> 
+        <div id="seven"></div>
+    </main>
+    
+</body>
+</html>
+<style>
+    body {
+        background-image: url(./images/fon2.jpg);
+        /* background-size: cover; Растянуть изоброжение на весь экран */
+        background-repeat:  no-repeat;
+        background-position: 50px 200px;
+        background-attachment: fixed;
+
+    }
+    .wrapper {
+        width: 40%;
+        margin:  20px auto 40px auto;
+        padding: 10px;
+        background-image: url(./images/fon1.jpg);
+        color: #333;
+    }
+    .opacityPicture {
+        margin-left: 25px;
+        opacity: 0.4; /*  opacity прозрачность, от 0 до 1 */
+        filter: alpha(opacity=40);
+    }
+    .hoverdemo:hover {
+        font-size: 2em;
+        color: red;
+        font-style:  italic;
+        background-color: rgba(255, 192, 203, 0.5);
+    }
+    .opacityHover:hover {
+        opacity: 0.5;
+    }
+    main div {
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+        border: 1px solid black;
+        display: inline-block;
+
+    }
+    #one {
+        background-image: linear-gradient(to left, black, red);
+    }
+    #two {
+        background-image: linear-gradient(to top left, black, red);
+    }
+    #three {
+        background-image: linear-gradient(65deg, black, yellow);
+    }
+    #four {
+        background-image: linear-gradient(to right, red, blue, yellow);
+    }
+    #five {
+        background-image: linear-gradient(to top left, blue, white, blue);
+    }
+    #six {
+        background-image: linear-gradient(cyan, yellow, indigo, white);
+    }
+    #seven {
+        background-image: linear-gradient(cyan, yellow 10%, indigo 30%, white 50%);
+    }
+</style>
