@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Списки HTML</title>
+</head>
+<body>
+    <h2>Нумерованные списки</h2>
+    <ol> <!-- ol - Нумерованные списки 1. 2. 3. 4. ... -->
+        <li>Water</li>
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Milk</li>
+    </ol>
+    <ol type="I"> <!-- ol -  -->
+        <li>Water</li>
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Milk</li>
+    </ol>
+    <ol class="roman"> <!-- ol использовать новое свойство CSS list-style-type -->
+        <li>Water</li>
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Milk</li>
+    </ol>
+    <ol class="alpha"> <!-- ol использовать новое свойство CSS list-style-type -->
+        <li>Water</li>
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Milk</li>
+    </ol>
+
+    <hr>
+
+    <h2>Изменение номера списка (используется редко)</h2>
+    <h3>Требования к кандидату на должность в компании IT-Softwear</h3>
+    <p>
+        На собеседовании с кандидатом на вакантную должность в первую очередь оцениваются такие показатели:
+    </p>
+    <ol>
+        <li>Знания и умения кандидата</li>
+        <li>Образование</li>
+        <li>Опыт работы в ІТ</li>
+        <li>Навыки работы в команде</li>
+    </ol>
+    <p>
+        После успешного прохождения собеседования, кандидату будет предложены следующие тесты:
+    </p>
+    <ol start="5">
+        <li>Тест на определение уровня владения английским языком</li>
+        <li>Внешняя сертификация</li>
+        <li>Оценка знаний</li>
+        <li>Оценка эффективности работы в условиях установки сжатых сроков</li>
+    </ol>
+
+    <hr>
+
+    <h2>Маркерованные списки</h2>
+    <ul> <!-- ol - Маркерованные списки  * * * * .... -->
+        <li>Water</li>
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Milk</li>
+    </ul>
+    <ul class="circle"> <!--  -->
+        <li>Water</li>
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Milk</li>
+    </ul>
+    <ul class="circle1"> <!--  -->
+        <li>Water</li>
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Milk</li>
+    </ul>
+    <ul class="square"> <!--  -->
+        <li>Water</li>
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Milk</li>
+    </ul>
+    <ul class="square1"> <!--  -->
+        <li>Water</li>
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Milk</li>
+    </ul>
+
+    <hr>
+
+    <h2>Вложенные списки</h2>
+    <ul >
+        <li>Water</li>
+        <li>Tea
+            <ol>
+                <li>Black tea</li>
+                <li>Green tea</li>
+            </ol>
+        </li>
+
+        <li>Coffee
+            <ol>
+                <li>Espresso</li>
+                <li>Americano</li>
+            </ol>
+        </li>
+        <li>Milk</li>
+    </ul>
+
+    <hr>
+
+    <h2>Изображение в качестве маркера списка</h2>
+
+    <ul class="li-picture">
+        <li>Water</li>
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Milk</li>
+    </ul>
+    
+    <hr>
+
+    <h2>Список определений</h2>
+
+    <dl>
+        <dt>Коффе</dt>
+        <dd>Бодрящий крепкий напиток</dd>
+        <dt>Молоко</dt>
+        <dd>Холодный полезный напиток</dd>
+    </dl>
+
+
+</body>
+</html>
+<style>
+    .roman {
+        list-style-type: upper-roman;
+    }
+    .alpha {
+        list-style-type: lower-latin;
+    }
+    .circle1 {
+        list-style-type:  circle;
+    }
+    .square1 {
+        list-style-type: square;
+    }
+    .li-picture {
+        list-style-image: url(./images/check.png);
+    }
+</style>
