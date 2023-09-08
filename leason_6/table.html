@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body>
+    <h3>Table 3</h3>
+    <table class="table3" border="1">
+        <tr>
+            <th>Colum 1</th>
+            <th>Colum 2</th>
+            <th>Colum 3</th>
+        </tr>
+
+        <tr>    
+            <td>12345678</td>
+            <td class="uniq">12345678</td>
+            <td>12345678</td>
+        </tr>
+        <tr>    
+            <td>12345678</td>
+            <td>12345678</td>
+            <td>12345678</td>
+        </tr>
+
+    </table>
+
+    <hr>
+    <h3>Table 4</h3>
+    <table class="table4" border="1">
+        <tr>
+            <th>Colum 1</th>
+            <th>Colum 2</th>
+            <th>Colum 3</th>
+        </tr>
+
+        <tr>    
+            <td>12345678</td>
+            <td class="uniq1">12345678</td>
+            <td>12345678</td>
+        </tr>
+        <tr>    
+            <td></td>
+            <td>12345678</td>
+            <td></td>
+        </tr>
+
+    </table>
+
+    <hr>
+
+    <h3>Table 5. Обьединение ячеек по горизонтали и вертикали</h3>
+    <table border="1">
+        <tr>
+            <th>Имя</th>
+            <th colspan="2">Телефон</th>
+        </tr>
+        <tr>
+            <td>Ruslan</td>
+            <td>068751173</td>
+            <td>068751173</td>
+        </tr>
+    </table>
+
+    <br><br><br>
+
+    <table border="1" width="50%">
+        <tr>
+            <th>Name</th>
+            <td>Petia</td>
+        </tr>
+        <tr>
+            <th rowspan="2">Phone</th>
+            <td>123456789</td>
+        </tr>
+
+        <tr>
+            <td>123456789</td>
+        </tr>
+    </table>
+
+    <br><br><br><br>
+
+    <table width="75%" border="1">
+        <tr>
+            <th rowspan="2">Пол</th>
+            <th colspan="2">Среднее значение</th>
+        </tr>
+        <tr>
+            <th>Рост</th>
+            <th>Вес</th>
+        </tr>
+        <tr>
+            <td>Мужчины</td>
+            <td>174</td>
+            <td>78</td>
+        </tr>
+        <tr>
+            <td>Женщины</td>
+            <td>165</td>
+            <td>56</td>
+        </tr>   
+        <tr>
+            <td style="text-align: center;" colspan="3">Таблицы №1</td>
+        </tr>   
+    </table>
+
+    <br><br><br><br>
+
+    <table border="1" width="50%">
+        <tr>
+            <th>1</th>
+            <th colspan="2">2</th>
+            <th >4</th>
+        </tr>
+        <tr>
+            <td rowspan="3">5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+       
+        </tr>
+        <tr>
+            <td>10</td>
+            <td colspan="2" rowspan="2">11</td>
+        </tr>
+        <tr>
+            <td>14</td>
+        </tr>
+
+    </table>
+
+    <hr>
+
+    <br><br>
+
+    <h3>Table 6. Логическая группировка ячеек по горизониали и вертикали</h3>
+    <table width="85%" class="table6">
+        <caption>6</caption>
+        <colgroup>
+            <col span="2" class="col-1">
+            <col span="4" class="col-2">
+            <col span="1" class="col-3">
+        </colgroup>
+        <thead>
+        <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+        </tr>
+        <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+        </tr>
+        <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+        </tr>
+        <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+        </tr>
+    </tbody>
+        <tfoot>
+        <tr>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+            <td>Cell</td>
+        </tr>
+    </tfoot>
+
+    </table>
+
+    <hr>
+    <br><br>
+    <h3>Table 7. Вложенные таблицы</h3>
+    <table border="1">
+        <tr>
+            <td>
+                <p>Paragraph 1</p>
+                <p>Paragraph 2</p>
+            </td>
+            <td>
+                В этой яцейке разместим таблицу:
+                <table border="1" width="30%">
+                    <tr>
+                        <td>A</td>
+                        <td>Б</td>
+                    </tr>
+                    <tr>
+                        <td>В</td>
+                        <td>Г</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="http://www.google.com/">Ссылка</a></td>
+            <td>ПРИВЕТ!</td>
+        </tr>
+    </table>
+
+    <hr>
+    <br><br>
+
+    <span class="znak">+</span>
+    <span class="znak">+</span>
+    <span class="znak">-</span>
+
+</body>
+</html>
+
+<style>
+    .table2 th {
+        border: 1px solid black;
+        background-color:  lightgray;
+    }
+    .table2 td{
+        border: 1px solid black;
+        background-color:  lightgray;
+    }
+    .table3 {
+        border-spacing: 10px;
+        background-color: gray;
+    }
+
+    .table3 .uniq{
+        width: 100px;
+        height: 100px;
+        text-align: right;
+        vertical-align: center;
+        background-color: white;
+    }
+    .table3 th {
+        border: 2px solid red;
+        background-color: lightgray;
+    }
+
+    .table3 td {
+        border-color: blue;
+        background-color: lightgray;
+    }
+    .table4 {
+        background-image: url(Images/bg_1.jpg);
+        border-spacing: 10px;
+        empty-cells: hide;
+    }
+    .table4 .uniq1 {
+        width: 100px;
+        height: 100px;
+        text-align: right;
+        vertical-align: center;
+        background-image: url(Images/bg_3.jpg);
+    }
+    .table4 td{
+        border: 2px solid red;
+        background-image: url(Images/bg_2.jpg);
+        
+    }
+    .table4 th{
+        border: 2px solid red;
+        background-image: url(Images/bg_2.jpg);
+    }
+    .col-1 {
+        background-color: #ffcccc;
+    }
+    .col-2 {
+        background-color: #ff9999;
+    }
+    .col-3 {
+        background-color: #cc9999;
+    }
+    .table6 tfoot{
+        color: white;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+    .table6 thead{
+        color: yellow;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+    .table6 tbody{
+        color: blue;
+        font-style: italic;
+    }
+    .znak{
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        border: 1px solid black;
+        border-radius: 50%;
+        
+        text-align: center;
+        line-height: 25px;
+    }
+</style>
