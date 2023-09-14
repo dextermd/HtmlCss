@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <h2>Элементы формы</h2>
+    <form action="myform.php" method="GET">
+
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="Введите ваше имя">
+        </div>
+        <br>
+        <div>
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" placeholder="Введите вашу фамилию">
+        </div>
+        <br>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Введите пароль" minlength="6" maxlength="25">
+        </div>
+        <br>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="Введите email">
+        </div>
+        <br>
+        <div>
+            <label for="email">Date</label>
+            <input type="date" name="date">
+        </div>
+        <br>
+        <div>
+            <label for="email">Select</label>
+            <select name="select" id="select">
+                <option value="one">Value One</option>
+                <option value="two">Value Two</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            Your favorite languages:
+            <label for="cplus">C++</label>
+            <input type="checkbox" name="cplus" value="cplus" id="cplus">
+            <label for="java">Java</label>
+            <input type="checkbox" name="java" value="java" id="java">
+            <label for="js">Javascript</label>
+            <input type="checkbox" name="js" value="js" id="js">
+        </div>
+        <br>
+        <div>
+            Your are:&nbsp;&nbsp;
+            <label for="famale">Famele</label> 
+            <input type="radio" name="gender" value="famale" id="famale"> &nbsp; &nbsp;
+            <label for="male">Male</label>
+            <input type="radio" name="gender" value="male" id="male">
+        </div>
+        <br>
+        <div>
+            Действие кнопки
+            <input type="button" value="Click me!" onclick="alert('Hello, world!')"> &nbsp; &nbsp;
+        </div>
+        <br>
+        <div>
+            Выбор жанра
+            <input type="text" name="genre" id="userGenre" list="genreSuggestions"> 
+            <datalist id="genreSuggestions">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </datalist>
+        </div>
+    </form>
+</body>
+</html>
+<style>
+
+</style>
