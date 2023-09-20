@@ -1,0 +1,25 @@
+body {
+    background-color: lightgray;
+}
+h2 {
+    background-color: gray;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+h3 {
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+.parent-block {
+    background-color: yellow;
+    overflow: auto; /* при переполнении блока добавляется скроллинг */
+}
+.inherit-property {
+    width: 30%;
+    height: 200px;
+    margin: 1.5%;
+    float: left;
+    overflow: inherit;
+}

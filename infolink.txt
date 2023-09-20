@@ -1,3 +1,5 @@
 https://htmlweb.ru/html/symbols.php
 
 https://cssgradient.io/gradient-backgrounds/
+
+https://hcdev.ru/css/box-sizing/
