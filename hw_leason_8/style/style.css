@@ -1,0 +1,199 @@
+body {
+    background-color: lightgrey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.card-v{
+    position: absolute;
+    margin: 5%;
+    padding: 1%;
+    background-color: rgb(181, 240, 240);
+    border-radius: 3%;
+    height: 250px;
+    width: 400px;
+    max-width: 600px;
+
+}
+.card-v label {
+    font-size: 0.8em;
+}
+
+.image {
+    background-image: url('../image/moon_flag.png'); 
+    background-repeat: no-repeat;
+    background-size: 40%; 
+    background-position-y: 150px;
+    background-position-x: 315px;
+}
+
+.title{
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding-left: 40px;
+    font-size: 1.2em;
+}
+.line3 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-bottom: 5px;
+    gap: 10px;
+}
+
+.line3 label {
+    display: block;
+    margin-top: 5px;
+}
+
+.line3 .ex-month,
+.line3 .ex-year,
+.line3 .cvv {
+    width: 5.5em;
+    height: 20px;
+}
+
+.card-v div {
+    padding-bottom: 5px;
+}
+
+.card-v input {
+    width: 19em;
+    height: 20px;
+    margin-top: 5px;
+
+}
+
+.box2 {
+    box-sizing: content-box;
+    width: 100%;
+    background-color: orange;
+    height: 20px;
+    padding: 10px;
+    margin-left: -50px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+.input-field {
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+
+
+
+
+
+
+
+
+    .input-default {
+        border: 1px solid #a5a1a1;
+        padding: 5px;
+        border-radius: 2px;
+    }
+    
+
+    .input-valid {
+        border: 1px solid #4CAF50; 
+        padding: 5px;
+        border-radius: 2px;
+        background-image: url('../image/valid.png');
+        background-repeat: no-repeat;
+        background-size: 8%;
+        background-position: calc(100% - 3px) center;
+    }
+    .input-valid::placeholder {
+        color: #4CAF50; 
+    }
+    
+ 
+    .input-invalid {
+        border: 1px solid #FF5733;
+        padding: 5px;
+        border-radius: 2px;
+        background-image: url('../image/invalid.png');
+        background-repeat: no-repeat;
+        background-size: 8%;
+        background-position: calc(100% - 3px) center;
+    }
+    .input-invalid::placeholder {
+        color: #FF5733; 
+    }
+    
+
+    
+
+    
+  
+    .button-normal {
+        background-color: #3498db; 
+        color: #fff; 
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+    
+
+    .button-normal:hover {
+        background-color: #2980b9; 
+    }
+
+
+    .button-disabled {
+        background-color: #ccc; 
+        color: #666; 
+        padding: 10px 20px;
+        border: none;
+        cursor: not-allowed;
+    }
+    
+ 
+    .button-circle {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background-color: #3498db; 
+        color: #fff; 
+        border: none;
+        cursor: pointer;
+    }
+    
+ 
+    .button-circle:hover {
+        background-color: #2980b9; 
+    }
+    
+   
+    .textarea-default {
+        border: 1px solid #ccc;
+        padding: 5px;
+    }
+    .toggle-checkbox {
+        position: relative;
+        border: 1px solid green;
+        display: inline-block;
+        width: 40px; 
+        height: 15px; 
+        background-color: white; 
+        border-radius: 5px; 
+        transition: border-color 0.2s;
+    }
+    .toggle-checkbox input {
+        display: none;
+    }
+    .slider {
+        position: absolute;
+        top: 1px; 
+        left: 21px; 
+        width: 15px; 
+        height: 12px; 
+        background-color: red; 
+        border-radius: 5%;
+        transition: 0.2s; 
+    }
+    .toggle-checkbox input:checked + .slider {
+        left: 3px; 
+        background-color: green; 
+        border-color: green;
+    }
+
