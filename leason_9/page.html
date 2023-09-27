@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sample Page</h1>
+            <h2>with CSS BOX model</h2>
+            <p>for students</p>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <div class="half">
+                <h3>About us</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id unde mollitia quas quisquam atque molestiae eos, tempore, rerum cum dolorem, ullam aperiam rem veritatis totam, nulla hic quam. Est, iste.
+                </p>
+                <p>
+                    Deleniti, aliquam perferendis iusto fugit, a eveniet dolores maiores dignissimos ipsa tempore atque voluptate neque animi natus. Laboriosam, vitae recusandae facere corporis dolores odio voluptatem placeat at sequi! A, aliquid!
+                </p>
+            </div>
+            <div class="half">
+                <h3>Our Mission</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id unde mollitia quas quisquam atque molestiae eos, tempore, rerum cum dolorem, ullam aperiam rem veritatis totam, nulla hic quam. Est, iste.
+                </p>
+                <p>
+                    Deleniti, aliquam perferendis iusto fugit, a eveniet dolores maiores dignissimos ipsa tempore atque voluptate neque animi natus. Laboriosam, vitae recusandae facere corporis dolores odio voluptatem placeat at sequi! A, aliquid!
+                </p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h3 class="text-center">Popular courses</h3>
+        <div class="container">
+            <div class="course">
+                <div class="top orange">
+                    <div class="promo">TOP SALES</div>
+                    <p>The web Developer</p>
+                </div>
+                <p>
+                    Deleniti, aliquam perferendis iusto fugit, a eveniet dolores maiores dignissimos ipsa tempore atque voluptate neque animi natus.
+                </p>
+                <p class="price">27.99</p>
+            </div>
+            <div class="course">
+                <div class="top red">
+                    <div class="promo">TOP SALES</div>
+                    <p>The web Developer</p>
+                </div>
+                <p>
+                    Deleniti, aliquam perferendis iusto fugit, a eveniet dolores maiores dignissimos ipsa tempore atque voluptate neque animi natus. 
+                </p>
+                <p class="price">27.99</p>
+            </div>
+            <div class="course">
+                <div class="top blue">
+                    <div class="promo">TOP SALES</div>
+                    <p>The web Developer</p>
+                </div>
+                <p>
+                    Deleniti, aliquam perferendis iusto fugit, a eveniet dolores maiores dignissimos ipsa tempore atque voluptate neque animi natus. 
+                </p>
+                <p class="price">27.99</p>
+            </div>
+            <div class="course">
+                <div class="top violet">
+                    <div class="promo">TOP SALES</div>
+                    <p>The web Developer</p>
+                </div>
+                <p>
+                    Deleniti, aliquam perferendis iusto fugit, a eveniet dolores maiores dignissimos ipsa tempore atque voluptate neque animi natus. 
+                </p>
+                <p class="price">27.99</p>
+            </div>
+            <div class="course">
+                <div class="top green">
+                    <div class="promo">TOP SALES</div>
+                    <p>The web Developer</p>
+                </div>
+                <p>
+                    Deleniti, aliquam perferendis iusto fugit, a eveniet dolores maiores dignissimos ipsa tempore atque voluptate neque animi natus. 
+                </p>
+                <p class="price">27.99</p>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="container">
+
+        </div>
+
+        <div class="footer-bottom">
+
+        </div>
+    </footer>
+
+</body>
+</html>
+<style>
+    body{
+        margin: 0;
+        font-family: sans-serif;
+    }
+    h1{
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+    }
+    header h2{
+        color: white;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+        font-family: serif;
+        font-size: 1.5em;
+    }
+    .container{
+        border: 2px solid green;
+        width: 90%;
+        margin: auto;
+    }
+    .container::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+    header{
+        background-color: #ff6825;
+        text-align: center;
+        padding: 8% 0;
+    }
+    section{
+        border: 1px solid blue;
+        margin: 5px;
+    }
+    .half{
+        width: 47%;
+        padding: 1.5%;
+        float: left;
+    }
+    .half h3{
+        text-decoration: underline;
+        text-decoration-style: dotted;
+    }
+    .course {
+        width: 17%;
+        padding: 1.5%;
+        float: left;
+        margin-bottom: 20px;
+    }
+    .price {
+        text-align: right;
+        font-weight: bold;
+    }
+    .price::before {
+        content: "$";
+    }
+    .text-center {
+        text-align: center;
+    }
+    .top {
+        height: 100px;
+        text-align: center;
+        color: white;
+        border: 3px double gray;
+        border-top-right-radius: 20px;
+        padding: 15px;
+        font-family: Cambria, serif;
+        font-weight: bold;
+    }
+    .orange {
+        background-color: orange;
+    }
+    .red {
+        background-color: red;
+    }
+    .blue {
+        background-color: blue;
+    }
+    .violet {
+        background-color: violet;
+    }
+    .green{
+        background-color: green;
+    }
+    .promo {
+        width: 70%;
+        background-color: #fecf04;
+        color: black;
+        font-size: 10px;
+        padding: 5px;
+        margin-left: -15px;
+        margin-top: -5px;
+        text-align: left;
+        border-radius: 0 20px 20px 0;
+
+    }
+</style>

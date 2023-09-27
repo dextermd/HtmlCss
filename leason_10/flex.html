@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+</head>
+<body>
+    <h2>Адаптивное меню</h2>
+    <nav>
+        <a href="#">Главная</a>
+        <a href="#">О нас</a>
+        <a href="#">Продукты</a>
+        <a href="#">Контакты</a>
+    </nav>
+    <h2>Выравнивание по вертикали и горизонтали одновременно и при любой высоте блока</h2>
+    
+    <div class="parent">
+        <span class="child">Текст по середине</span>
+    </div>
+
+    <H2>Выравнивание по вертикали и горизонтали без блока внутри</h2>
+    <div class="center-text">
+            Текст по середине
+    </div>
+
+    <H2>Выравнивание вправо с блоком внутри</h2>
+    <div class="margin-right">
+        <span class="child1">Текст вправо</span>
+    </div>
+</body>
+</html>
+<style>
+    nav{
+        display: flex;
+        justify-content: flex-end;
+        background: #6e9cc3;
+    }
+    nav a{
+        color: #fff;
+        padding:  15px 10px;
+        text-decoration: none;
+    }
+    .parent{
+        display: flex;
+        border: 1px red solid;
+        height: 100px;
+    }
+    .child {
+        margin: auto;
+        border: 1px black solid;
+    }
+    .center-text { /*родитель*/
+	display: flex; /*контейнер Flex - элемент растягивается на всю ширину */
+	justify-content: center; /*для контейнера, располагает по центру (место останется слева и права)*/
+	align-items: center; /*Выравнивает Дочерние элементы по поперечной (вертикальной) оси внутри ряда (невидимой строки). Т.е. сами ряды выравниваются через align-content, а элементы внутри этих рядов (строк) через align-items и все это по поперечной оси. По главной оси такого разделения нет, там нет понятия рядов и элементы выравниваются через justify-content*/
+	height: 100px;
+	border: 1px red solid;
+}
+</style>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form class="registration-form">
+        <div class="form-section">
+            <h2>Registration form</h2>
+            <div class="form-group pb-1">
+                <img src="./image/username.png" alt="">
+                <input type="text" id="login" name="login" class="input-bottom-border"  placeholder="Username">
+            </div>
+            <div class="form-group">
+                <img src="./image/email.png" alt="">
+                <input type="email" id="email" name="email" class="input-bottom-border" placeholder="Email address">
+            </div>
+            <div class="form-group">
+                <img src="./image/pswd.png" alt="">
+                <input type="password" id="password" name="password" class="input-bottom-border" placeholder="Password"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <input type="password" id="conf_password" name="conf_password" class="input-bottom-border" placeholder="Confirm password">
+            </div>
+        </div>
+
+
+        <div class="form-section">
+            <h2>Personal details</h2>
+            <div class="form-group">
+                <input type="text" id="firstName" name="firstName" class="input-bottom-border" placeholder="First name">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <input type="text" id="lastName" name="lastName" class="input-bottom-border" placeholder="Last name">
+            </div>
+            <div class="form-group">
+                <select class="input-bottom-border" name="select" id="select">
+                    <option value="one">Male</option>
+                    <option value="two">Famale</option>
+                </select>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <input type="date" id="date" name="date" class="input-bottom-border" placeholder="mm/dd/yyy">
+            </div>
+
+        <div class="form-section pt-5">
+            <div class="form-group">
+                <input type="checkbox" id="subscribe" name="subscribe">
+                <label for="subscribe">I want to receive news and special offers</label>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="agree" name="agree" >
+                <label for="agree">I agree with the Terms and Conditions</label>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class="form-group butt">
+            <button class="butt" type="submit">SUBMIT</button>
+        </div>
+    </form>
+</body>
+</html>
+

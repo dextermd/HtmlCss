@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visibility</title>
+</head>
+<body>
+    <p class="el2">Наведи на меня курсором мыши!</p>
+    <p class="el1">Я невидимый абзац. Я появляюсь, когда вы наводите на соседний со мной сверху абзац!</p>
+</body>
+</html>
+<style>
+    .el1 {
+        visibility: hidden;
+    }
+    .el2:hover + .el1 {
+        visibility: visible;
+    }
+</style>
