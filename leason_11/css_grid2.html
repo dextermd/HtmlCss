@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="UTF-8"> 				<!--кодировка символов-->
+    <title>Интуитивный шаблон</title>		<!--имя веб-страницы-->
+	<style>
+	header, footer, article, nav, div {
+		padding: 1.2em;
+		background: gold;
+	}
+	
+	/*назначаем грид-область (grid-area) каждому HTML элементу с id*/
+#pageHeader {
+	grid-area: header; 
+}
+#pageFooter {
+	grid-area: footer;
+}
+#mainArticle {
+	grid-area: article;
+}
+#mainNav {
+	grid-area: nav;
+}
+#siteAds {
+	grid-area: ads;
+}
+
+/*создаем интуитивный шаблон для всего body*/
+
+body { /*для всей страницы - родитель */
+	width: 75%;
+	height: 100vh; /*vh - viewport height*/
+	margin: 0 auto;
+	
+	display: grid; /*Чтобы создать Grid шаблон, нужно выставить элементу display: grid*/
+	
+	grid-template-areas: /*создаем области*/
+		"nav header header" 
+		"nav article ads" 
+		"footer footer footer";
+
+	grid-template-rows: 80px 1fr 70px; /*Выстраивает ряды (строки) в гриде. Каждое значение представляет размер ряда - 3 строки*/
+	grid-template-columns: 20% 1fr 25%;/*Выстраивает колонки в гриде. Каждое значение представляет размер колонки - 3 колонки*/
+
+	grid-row-gap: 10px; /*задаем расстояние между строк*/
+	grid-column-gap: 10px; /*задаем расстояние между колонками*/
+}
+
+/*медиа-запросы*/
+@media all and (max-width: 575px) {
+	body {
+		grid-template-areas:
+					"header" 
+					"nav"
+					"article"
+					"ads"
+					"footer";
+					
+		grid-template-rows: 80px 70px 1fr  1fr 70px; /*задаем 5 строк*/
+		grid-template-columns: 1fr; /*выстраиваем все в одну колонку*/
+	}
+}
+	</style>
+ </head>
+ <body>
+	<header id="pageHeader">Site Header </header>
+	
+	<article id="mainArticle">Site Article</article>
+	
+	<nav id="mainNav">Site Nav</nav>
+	
+	<div id="siteAds">Site Ads</div>
+	
+	<footer id="pageFooter">Site Footer</footer>
+</body>

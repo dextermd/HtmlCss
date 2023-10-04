@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="gallery">
+        <h1>Gallery</h1>
+    </div>
+
+    <div class="container">
+        <div class="img2">
+            <img src="./imgAdapt/rive_sm.jpg" alt="Img">
+        </div>
+        <div class="img3">
+            <img src="./imgAdapt/small.jpg" alt="Img">
+        </div>
+        <div class="img4">
+            <img src="./imgAdapt/the_house.jpg" alt="Img">
+        </div>
+    </div>
+</body>
+</html>
+<style>
+    .img2, .img3, .img4 {
+        width: 100%;
+        margin: 5px;
+    }
+    .img {
+        width: 100%;
+        height: auto;
+    }
+    .container, img, .gallery{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 90%;
+        background-color: lightgray;
+        margin: 5px auto;
+        padding: 10px;
+
+    }
+
+    @media screen and (max-width: 550px) {
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+</style>
