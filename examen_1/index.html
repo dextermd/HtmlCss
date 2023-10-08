@@ -87,23 +87,23 @@
             <div class="row">
                 <div class="column divider-right">
                     <div class="inner-content">
-                        <div class="icon">Иконка 1</div>
-                        <div class="text">Название 1</div>
-                        <div class="text">Текст 1</div>
+                        <div class="icon"><img height="30px" src="./images/airplane-48.png" alt="airplane"></div>
+                        <div class="text text-bold pb-2">One</div>
+                        <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
                     </div>
                 </div>
                 <div class="column divider-right">
                     <div class="inner-content">
-                        <div class="icon">Иконка 2</div>
-                        <div class="text">Название 2</div>
-                        <div class="text">Текст 2</div>
+                        <div class="icon"><img height="30px" src="./images/map_marker-48.png" alt="map_marker"></div>
+                        <div class="text text-bold pb-2">Two</div>
+                        <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
                     </div>
                 </div>
                 <div class="column">
                     <div class="inner-content">
-                        <div class="icon">Иконка 3</div>
-                        <div class="text">Название 3</div>
-                        <div class="text">Текст 3</div>
+                        <div class="icon"><img height="30px" src="./images/movie-48.png" alt="movie"></div>
+                        <div class="text text-bold pb-2">Three</div>
+                        <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
                     </div>
                 </div>
             </div>
@@ -111,33 +111,98 @@
             <div class="row">
                 <div class="column divider-right">
                     <div class="inner-content">
-                        <div class="icon">Иконка 4</div>
-                        <div class="text">Название 4</div>
-                        <div class="text">Текст 4</div>
+                        <div class="icon"><img height="30px" src="./images/alarm_clock-48.png" alt="alarm_clock"></div>
+                        <div class="text text-bold pb-2">Four</div>
+                        <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
                     </div>
                 </div>
                 <div class="column divider-right">
                     <div class="inner-content">
-                        <div class="icon">Иконка 5</div>
-                        <div class="text">Название 5</div>
-                        <div class="text">Текст 5</div>
+                        <div class="icon"><img height="30px" src="./images/face-48.png" alt="face"></div>
+                        <div class="text text-bold pb-2">Five</div>
+                        <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
                     </div>
                 </div>
                 <div class="column">
                     <div class="inner-content">
-                        <div class="icon">Иконка 6</div>
-                        <div class="text">Название 6</div>
-                        <div class="text">Текст 6</div>
+                        <div class="icon"><img height="30px" src="./images/genius-48.png" alt="genius"></div>
+                        <div class="text text-bold pb-2">Six</div>
+                        <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
                     </div>
                 </div>
+        </div>
+
+        <h1 class="text-center py-3">Write to us</h1>
+
+        <div class="form-container">
+            <div class="form-row">
+                <div class="form-col">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-col">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-col">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                </div>
             </div>
+            <div class="form-row radio-group">
+                <span>Contact me via:</span>
+                <input type="radio" id="emailRadio" name="contactMethod" value="email">
+                <label for="emailRadio">Email</label>
+                <input type="radio" id="phoneRadio" name="contactMethod" value="phone">
+                <label for="phoneRadio">Phone</label>
+                <input type="radio" id="telegramRadio" name="contactMethod" value="telegram">
+                <label for="telegramRadio">Telegram</label>
+            </div>
+            <div class="form-row">
+                <label for="topic">Topic:</label>
+                <select id="topic" required>
+                    <option value="general">General Inquiry</option>
+                    <option value="support">Customer Support</option>
+                    <option value="feedback">Feedback</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="message">Message:</label>
+                <textarea id="message" rows="4" cols="50" required></textarea>
+            </div>
+            <div class="form-row-form">
+                <div class="left-container">
+                    <input type="radio" id="humanRadio" name="human" required>
+                    <label for="humanRadio">I am human</label>
+                </div>
+                <button class="item-right" id="submitButton">Send</button>
+            </div>
+        </div>
     </div>
+
+    <footer class="footer">
+        <hr class="footer-divider">
+        <div class="footer-content">
+            <div style="padding-top: 20px;" class="footer-icons  pb-2">
+                <img src="./images/twitter-128.png" alt="Icon 1">
+                <img src="./images/facebook-128.png" alt="Icon 2">
+                <img src="./images/instagram-2-128.png" alt="Icon 3">
+                <img src="./images/youtube-128.png" alt="Icon 3">
+                <img src="./images/instagram-2-128.png" alt="Icon 3">
+            </div>
+            <div class="footer-text">
+                <p>&copy; UNTITLED 2023</p>
+            </div>
+        </div>
+    </footer>
 
  <br>
  <br>
 </body>
 </html>
 <style>
+
+
     body{
         font-family: Garamond serif;
         margin: 0 5% 0 5%;
@@ -229,7 +294,6 @@
     .gallery {
     text-align: center;
     }
-
     .image-container {
         display: flex;
         justify-content: center;
@@ -248,7 +312,7 @@
         flex-direction: column;
         align-items: stretch;
         justify-content: flex-start;
-        width: 100%;
+        margin: 5%;
     }
     .row {
         display: flex;
@@ -276,6 +340,135 @@
     }
     .divider-right {
         border-right: 2px solid #ccc; /* Граница между строками */
-       
     }
+    .inner-content{
+        margin: 40px;
+    }
+    .text-bold{
+        font-weight: bold;
+    }
+    .pb-2{
+        padding-bottom: 20px;
+    }
+    .py-3{
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+
+
+
+    .form-container {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        vertical-align: top; 
+    padding: 1em;
+    }
+
+    .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    align-items: center;
+    
+}
+
+
+.form-col {
+    flex: 0 0 calc(33.333% - 20px);
+    margin-right: 20px;
+    position: relative;
+}
+
+.form-col:last-child {
+    margin-right: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+label {
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Обновленные стили для радиокнопок и их меток */
+.radio-group {
+    display: flex;
+    align-items: center;
+    
+}
+
+.radio-group label {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.radio-group input[type="radio"] {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.form-row-form {
+    display: flex; /* Используем flexbox для контейнера .form-row */
+    align-items: center; /* Выравниваем элементы по вертикали по центру */
+    justify-content: space-between; /* Распределяем пространство между элементами */
+}
+
+.left-container {
+    display: flex; /* Используем flexbox для контейнера .left-container */
+    align-items: center; /* Выравниваем элементы внутри .left-container по вертикали по центру */
+}
+
+.item-right {
+    margin-left: auto; /* Сдвигаем кнопку вправо, за счет автоматического отступа слева */
+}
+
+#submitButton {
+        display: block;
+        width: 150px;
+        padding: 5px;
+    }
+
+
+    .footer {
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-divider {
+    border-top: 1px solid #ccc;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.footer-icons img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+.site-name {
+    margin: 5px 0;
+}
+
+.footer-year {
+    margin: 5px 0;
+}
 </style>
