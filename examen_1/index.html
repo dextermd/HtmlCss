@@ -106,9 +106,7 @@
                         <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
                     </div>
                 </div>
-            </div>
-            <div class="divider-top"></div>
-            <div class="row">
+
                 <div class="column divider-right">
                     <div class="inner-content">
                         <div class="icon"><img height="30px" src="./images/alarm_clock-48.png" alt="alarm_clock"></div>
@@ -128,8 +126,8 @@
                         <div class="icon"><img height="30px" src="./images/genius-48.png" alt="genius"></div>
                         <div class="text text-bold pb-2">Six</div>
                         <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-                    </div>
                 </div>
+            </div>
         </div>
 
         <h1 class="text-center py-3">Write to us</h1>
@@ -201,7 +199,6 @@
 </body>
 </html>
 <style>
-
 
     body{
         font-family: Garamond serif;
@@ -299,31 +296,31 @@
         justify-content: center;
         align-items: center;
         flex-wrap: nowrap;
-        overflow: hidden; /* Скрывает части изображений, которые не помещаются */
+        overflow: hidden; 
     }
 
     .gallery-image {
         width: 450px;
         height: 250px;
-        object-fit: cover; /* Подгоняет изображения в установленные размеры, сохраняя пропорции */
+        object-fit: cover;
     }
     .features {
         display: flex;
         flex-direction: column;
-        align-items: stretch;
-        justify-content: flex-start;
+
         margin: 5%;
     }
     .row {
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+
     }
 
     .column {
-        flex: 0 0 calc(33.33% - 10px); /* Ширина колонки (3 колонки в строке) с учетом отступов */
-        padding: 10px;
+        flex: 0 0 calc(25%);
         text-align: center;
     }
+
 
     .icon {
         font-size: 24px;
@@ -335,11 +332,11 @@
     }
 
     .divider-top {
-        border-top: 2px solid #ccc; /* Граница между строками */
+        border-top: 2px solid #ccc; 
        
     }
     .divider-right {
-        border-right: 2px solid #ccc; /* Граница между строками */
+        border-right: 2px solid #ccc; 
     }
     .inner-content{
         margin: 40px;
@@ -363,7 +360,7 @@
         margin: 0;
         padding: 0;
         vertical-align: top; 
-    padding: 1em;
+        padding: 1em;
     }
 
     .form-row {
@@ -403,7 +400,6 @@ label {
     display: block;
 }
 
-/* Обновленные стили для радиокнопок и их меток */
 .radio-group {
     display: flex;
     align-items: center;
@@ -422,28 +418,28 @@ label {
 }
 
 .form-row-form {
-    display: flex; /* Используем flexbox для контейнера .form-row */
-    align-items: center; /* Выравниваем элементы по вертикали по центру */
-    justify-content: space-between; /* Распределяем пространство между элементами */
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; 
 }
 
 .left-container {
-    display: flex; /* Используем flexbox для контейнера .left-container */
-    align-items: center; /* Выравниваем элементы внутри .left-container по вертикали по центру */
+    display: flex; 
+    align-items: center; 
 }
 
 .item-right {
-    margin-left: auto; /* Сдвигаем кнопку вправо, за счет автоматического отступа слева */
+    margin-left: auto; 
 }
 
 #submitButton {
-        display: block;
-        width: 150px;
-        padding: 5px;
-    }
+    display: block;
+    width: 150px;
+    padding: 5px;
+}
 
 
-    .footer {
+.footer {
     text-align: center;
     padding: 20px;
 }
@@ -470,5 +466,35 @@ label {
 
 .footer-year {
     margin: 5px 0;
+}   
+
+
+
+@media (max-width: 600px) {
+    .row {
+        flex-direction: column;
+    }
+    .divider-right {
+        border-right: none;
+    }
+    .column:not(:last-child) {
+        border-bottom: 2px solid #ccc; 
+    }
+}
+
+
+@media (min-width: 601px) and (max-width: 850px) {
+    .features .row {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .divider-right {
+        border-right: none;
+    }
+
+    .features .column {
+        flex: 0 0 40% ;
+    }
 }
 </style>
