@@ -1,0 +1,184 @@
+<script>
+    // ------------------------------------------------------------------------------------------------
+    /* 
+        1. Написать функцию, которая принимает 2 числа и возвращает -1, если первое меньше, чем второе;
+        1 – если первое больше, чем второе; и 0 – если числа равны. 
+    */
+
+    function first(num1, num2) {
+        if(num1 < num2){
+            return -1;
+        }else if(num1 > num2){
+            return 1;
+        }
+        return 0;
+    }
+
+    document.write( first(1,1) + "<br>");
+    document.write("<br> <br>");
+    // ------------------------------------------------------------------------------------------------
+    /* 2. Написать функцию, которая вычисляет факториал переданного ей числа. */
+
+    function fact(num) {
+        if(num == 1){
+            return 1;
+        }else{
+            return(num *(fact(num - 1)));
+        }
+    }
+
+    document.write(fact(12)+ "<br>");
+    document.write("<br> <br>");
+
+    // ------------------------------------------------------------------------------------------------
+    /* 
+        3. Написать функцию, которая принимает три отдельные цифры и превращает их в одно число.
+        Например: цифры 1, 4, 9 превратятся в число 149. 
+    */
+
+    function tree_num_to_string(num1, num2, num3) {
+        number = num1.toString() + num2.toString() + num3.toString()
+        return parseInt(number);
+    }
+
+    document.write(tree_num_to_string(1, 4, 9) + "<br>");
+    document.write("<br> <br>");
+
+    // ------------------------------------------------------------------------------------------------
+    /*     
+        4. Написать функцию, которая принимает длину и ширину прямоугольника и вычисляет его площадь.
+        Если в функцию передали 1 параметр, то она вычисляет площадь квадрата. 
+     */
+    function calculate_area(l, w) {
+        if (w === undefined) {
+            return l * l;
+        } else {
+            return l * w; 
+        }
+    }
+
+    let rectangleArea = calculate_area(4, 5); 
+    let squareArea = calculate_area(4);
+    document.write(rectangleArea + "<br>");
+    document.write(squareArea + "<br>");
+    document.write("<br> <br>");
+    // ------------------------------------------------------------------------------------------------
+    /* 
+        5. Написать функцию, которая проверяет, является ли переданное ей число совершенным. 
+        Совершенное число – это число, равное сумме всех своих собственных делителей.
+    */
+
+    function is_perfect_number(number) {
+    if (number <= 0) {
+        return false;
+    }
+
+    let sum = 0;
+    for (let i = 1; i < number; i++) {
+        if (number % i === 0) {
+            sum += i;
+        }
+    }
+    return sum === number;
+    }
+
+    document.write(is_perfect_number(6) + "<br>");
+    document.write(is_perfect_number(12) + "<br>");
+    document.write("<br> <br>");
+
+    // ------------------------------------------------------------------------------------------------
+    /* 
+        6. Написать функцию, которая принимает минимальное и максимальное значения для диапазона,
+        и выводит только те числа из диапазона, которые являются совершенными. 
+        Используйте написанную ранее функцию, чтобы узнавать, совершенное число или нет.
+
+    */
+   function min_max_perfect_show(min, max){
+    for (let i = min; i <= max; i++) {
+        is_perfect_number(i) ? document.write(i + "<br>") : i;
+    }
+   }
+
+   min_max_perfect_show(1, 50);
+   document.write("<br> <br>");
+
+    // ------------------------------------------------------------------------------------------------
+    /* 
+        7. Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс». 
+        Если при вызове функции минуты и/или секунды не былипереданы, то выводить их как 00.
+    */
+
+    function date_time_f(hours, mins, seconds) {
+        if (mins === undefined)
+            mins = "00";
+        if (seconds === undefined)
+            seconds = "00";
+
+        document.write(hours + ':' + mins + ':' + seconds + "<br>");
+    }
+    date_time_f(18, 49, 22)
+    date_time_f(18, 49)
+    date_time_f(18)
+
+    document.write("<br> <br>");
+
+    // ------------------------------------------------------------------------------------------------
+    /* 
+        8. Написать функцию, которая принимает часы, минуты и секунды и возвращает это время в секундах.
+    */
+
+    function time_to_sec(hours, mins, seconds) {
+        return (hours * 3600) + (mins * 60) + seconds;
+    }
+
+    document.write(time_to_sec(18, 49, 22) + "<br>");
+    document.write("<br> <br>");
+
+    // ------------------------------------------------------------------------------------------------
+    /* 
+        9. Написать функцию, которая принимает количество секунд,
+        переводит их в часы, минуты и секунды и возвращает в виде строки «чч:мм:сс».
+    */
+
+    function sec_to_time(seconds) {
+        hours = parseInt(seconds / 3600);
+        sec = seconds % 3600;
+        mins = parseInt(sec / 60);
+        sec = sec % 60;
+
+        return hours + ':' + mins + ':' + sec;
+    }
+
+    document.write(sec_to_time(time_to_sec(18, 49, 22)) + "<br>");
+    document.write("<br> <br>");
+
+    // ------------------------------------------------------------------------------------------------
+    /* 
+        10. Написать функцию, которая считает разницу между датами. 
+        Функция принимает 6 параметров, которые описывают 2 даты, и возвращает результат в виде строки «чч:мм:сс». 
+        При выполнении задания используйте функции из предыдущих 2-х заданий: сначала обе даты переведите в секунды,
+        узнайте разницу в секундах, а потом разницу переведите обратно в «чч:мм:сс».
+    */
+    function time_difference(hours1, minutes1, seconds1, hours2, minutes2, seconds2) {
+        let total_seconds1 = time_to_sec(hours1, minutes1, seconds1);
+        let total_seconds2 = time_to_sec(hours2, minutes2, seconds2);
+        let difference_seconds = Math.abs(total_seconds1 - total_seconds2);
+
+        let hours = Math.floor(difference_seconds / 3600);
+        difference_seconds %= 3600;
+        let minutes = Math.floor(difference_seconds / 60);
+        let seconds = difference_seconds % 60;
+
+        let formatted_time = (hours < 10 ? '0' : '') + hours + ':' +
+                            (minutes < 10 ? '0' : '') + minutes + ':' +
+                            (seconds < 10 ? '0' : '') + seconds;
+
+        return formatted_time;
+    }
+
+    let difference = time_difference(10, 30, 45, 8, 15, 20);
+    
+    document.write("Разница между датами: " + difference + "<br>");
+    document.write("<br> <br>");
+
+</script>
