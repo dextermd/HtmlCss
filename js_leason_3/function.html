@@ -1,0 +1,216 @@
+<script>
+    //----------------------------------------------------------------------
+
+    function sq(l, w) {
+        return l * w;
+    }
+    
+    document.write(sq(5, 8) + '<br>')
+
+    //----------------------------------------------------------------------
+
+    function showFiveBlocks() {
+        for(i=1; i <= 5; i++){
+            document.write("<h2> Header " + i + "</h2>");
+        }
+    }
+
+    showFiveBlocks();
+
+    //----------------------------------------------------------------------
+
+/*     function sq(l,w) {
+        return l*w;
+    }
+
+    document.write(sq(5, 8, 10, 20) + '<br>') // Возьмет только 2 аргумента  потому что функция имеет тоолько 2 параметра */
+
+    //----------------------------------------------------------------------
+
+    function sayHi(){
+        for (let i = 0; i < arguments.length; i++) {
+            document.write('Hello' + '  ' + arguments[i] + '<br> ');
+        } 
+    }
+
+    sayHi('Оля', 'Alexandr', 'Roza', 'Iulia', 'Anastasia');
+
+    document.write("<br>");
+
+    //----------------------------------------------------------------------
+
+/*     function sq() {
+        let result = 1;
+        for (let i = 0; i < arguments.length; i++) {
+            result *=arguments[i];
+        }
+        return result;
+    }
+
+    document.write(sq(2, 5, 10, 11));
+    document.write("<br>"); */
+
+    //----------------------------------------------------------------------
+    // let, локальная ( без let переменная становится глобальной )
+
+    function sq() {
+        result = 1;
+        for (let i = 0; i < arguments.length; i++) {
+            result *=arguments[i];
+        }
+        return result;
+    }
+
+    document.write(sq(2, 8, 10));
+    console.log(result);
+    document.write("<br> <br>");
+
+    //----------------------------------------------------------------------
+    // recursia // 5! == 1*2*3*4*5 = 120
+    // recursia // 5! == 5*4*3*2*1 = 120
+
+    function fact(num) {
+        if(num == 1){
+            return 1;
+        }else{
+            return(num *(fact(num - 1)));
+        }
+    }
+    document.write(fact(5));
+    document.write("<br> <br>");
+
+    //----------------------------------------------------------------------
+    // Использование синтаксиса Function Declaration для функции
+
+/*     //let age = prompt("Сколько вам лет?", 18);
+    let age = 20;
+    if (age < 18) {
+        function welcome() {
+            document.write("Привет!");
+        }
+    } else {
+        function welcome() {
+            document.write("Здравствуйте!");
+        }
+    }
+
+    welcome();
+    document.write("<br> <br>"); */
+
+    //----------------------------------------------------------------------
+    // Использование синтаксиса Function Expression для функции
+    // Присваивание переменной функцию называется Function Expression
+
+/*     let age = 20;
+    let welcome;
+    if (age < 18) {
+        welcome = function welcome() {
+            document.write("Привет!");
+        }
+    } else {
+        welcome = function welcome() {
+            document.write("Здравствуйте!");
+        }
+    }
+
+    welcome();
+    document.write("<br> <br>");
+ */
+    //----------------------------------------------------------------------
+    // Использование синтаксиса Function Expression для функции
+    // Присваивание переменной функцию называется Function Expression
+    // Тернарный оператор 
+
+    let age = 17;
+    let welcome = (age < 18) ? function() {
+        document.write("Привет!");}: function() {
+            document.write("Здравствуйте!"); }
+    welcome()
+
+    document.write("<br> <br>");
+
+    //----------------------------------------------------------------------
+    /*---Использование функции  confirm()----*/
+
+    /*
+        Функция работает так. На экран выводится панель с двумя кнопками: 
+		Если пользователь нажимает на кнопку Ok, функция confirm возвращает значение true,
+        если на кнопку Отмена (Cancel) — значение false. Пользователь может использовать эквивалентные клавиши Enter и Esc.
+    */
+
+/*     confirm("Continue?"); 
+
+    let jsLike = confirm('Вам нравится JavaScript?');
+
+    if(jsLike) {
+        like='Вы ответили, что Вам нравится JavaScript';
+    }
+    else {
+        like='Вы ответили, что Вам не нравится JavaScript';
+    }
+
+    alert(like);
+
+    document.write("<br> <br>"); */
+
+    //----------------------------------------------------------------------
+    // Example Function Declaration and Function Expression
+
+/*     function ask(question, yes, no) {
+        if(question){
+            yes();
+        }else {
+            no();
+        }
+    }
+    // Вызов функции
+    ask(confirm("Вам нравится Javascript?"),
+        function() {document.write("Вы ответили, что вам нравится JavaScript")},
+        function() {document.write("Вы ответили, что вам не нравится JavaScript")},
+    );
+
+    document.write("<br> <br>"); */
+
+    //----------------------------------------------------------------------
+    // Функции стрелки или стрелочные функции (arrow function)
+    // (param1, param2) => expression;
+    // (param1, param2) => {statesments};
+
+    // example 1
+    let sum = function(num1, num2) {
+        return num1 + num2;
+    }
+
+    document.write(sum(10,11) + "<br>");
+
+    let sum_arrow = (num1, num2) => num1 + num2;
+
+    document.write(sum_arrow(10,11) + "<br>");
+
+    // example 2
+    let age_two = 18;
+    let welc = (age_two < 18) ? 
+        () =>  document.write("Child <br>") :
+        () => document.write("Adult <br>");
+    
+    welc();
+
+    // example 3
+
+    function ask(question, yes, no) {
+        if(confirm(question)){
+            yes();
+        }else {
+            no();
+        }
+    }
+
+    ask('Вам нравится JavaScript?',
+        () => document.write("Вы ответили, что вам нравится JavaScript") ,
+        () => document.write("Вы ответили, что вам не нравится JavaScript")
+    );
+
+    document.write("<br> <br>");
+    //----------------------------------------------------------------------
+
+</script>

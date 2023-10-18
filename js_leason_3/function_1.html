@@ -1,0 +1,202 @@
+<script>
+/*---------------1 example-----------------
+	alert(sq(5,8));
+	
+	function sq(l,w) {
+		return l*w;
+	}*/
+	
+	/*function sq1(l,w) {
+		alert(l*w);
+	}
+	sq1(5,8);*/
+	
+	/*---------------2 example-----------------
+  function show5Blocks() {
+	   for(i=1;i<=5;i++)
+	     document.write("<h2> Header "+i+"</h2>");
+	}
+	show5Blocks();*/
+
+/*---------------3 example-----------------
+function sq(l,w,h) {	//нельзя
+		
+	}
+  
+	let sq(l,w) {		//переменная переопределит функцию
+		
+	}*/
+	
+/*---------------4 example-----------------
+	alert(sq(5,8,10,20)); //результат 40, фактические аргументы (4 аргумента) 
+	
+	function sq(l,w) {  //формальные параметра 
+		return l*w;
+	}		
+*/
+  
+/*---------------5 example-----------------
+	alert(sq(5,8));   //NaN, фактические аргументы (2 аргумента) 
+	
+	function sq(l,w,h) {  //формальные параметра - нет значений
+		return l*w*h;
+	}   
+*/
+
+
+/*---------------объект arguments-----------------
+//arguments[0], arguments[1]  .... свойство length 
+//arguments.length - длина массива
+function sayHi(){
+		for (i=0; i<arguments.length; i++){
+			alert('Hello ' + arguments[i]);
+		}
+	}
+	sayHi('Оля', 'Alexandr', 'Roza', 'Iulia', 'Anastasia');
+	
+	
+	alert(sq(5,8,10,20));   //фактические аргументы  
+	
+	function sq() {  // нет параметров 
+		 let result=1;
+		  for (i=0; i<arguments.length; i++)
+		  result*=arguments[i]; //i - это индекс массива, начинается с 0
+		 return result;
+	}*/
+
+
+/*------------let, локальная и глобальная перменная--------
+
+alert(sq(5,8,10));
+function sq() {
+	result = 1;	// let - локальная переменная, за пределами тела функции она не видна, если убираем let, переменная глобальная, видна за пределами блока 
+	for(i=0; i<arguments.length; i++)
+		result*=arguments[i];
+		return result;
+}
+ console.log(result); 
+*/
+
+/*-------recursia---------
+//5! = 1*2*3*4*5 = 120
+//5! = 5*4*3*3*1 = 120
+
+function fact(n) {
+	if(n==1) {
+		return 1;
+	}
+	else {
+		return(n*(fact(n-1)));
+	}
+}
+alert(fact(5));
+
+
+*/
+
+/*Использование синтаксиса Function Declaration для функций
+let age = prompt("Сколько Вам лет?", 18); 
+if (age < 18) {
+	function welcome() {
+		alert("Привет!");
+	}
+} 
+else {
+	function welcome() { 
+		alert("Здравствуйте!");
+	}
+}
+	welcome(); //вызов функции
+*/
+
+/*---Использование синтаксиса Function Expression для функций----
+let age = prompt("Сколько Вам лет?", 18); 
+let welcome;
+if (age < 18) {
+	welcome = function() {
+		alert("Привет!");
+		};
+	} 
+else {
+	welcome = function() {
+		alert("Здравствуйте!");
+		};
+	}
+welcome(); // переменная стала функцией
+*/
+
+/*---Использование синтаксиса Function Expression (тернарный оператор) для функций ----
+let age = prompt("Сколько Вам лет?", 18); 
+let welcome = (age<18) ? function(){
+	alert('Привет');} : function(){
+	alert("Здравствуйте!");	}
+welcome();*/
+
+/*---Использование функции  confirm()----
+		confirm("Continue?"); //модальное окно, 2 кнопки - OK, Cancel
+		*/
+		
+		/*Функция работает так. На экран выводится панель с двумя кнопками: 
+		Если пользователь нажимает на кнопку Ok, функция confirm возвращает значение true, если на кнопку Отмена (Cancel) — значение false. Пользователь может использовать эквивалентные клавиши Enter и Esc. 
+		
+		let jsLike = confirm('Вам нравится JavaScript?');
+		if(jsLike) {
+			like='Вы ответили, что Вам нравится JavaScript';
+		}
+		else {
+			like='Вы ответили, что Вам не нравится JavaScript';
+		}
+		
+		alert(like);*/
+
+
+
+/*-------example Function Declaration и Function Expression (анонимные функции)---------
+function ask(question, yes, no) {
+	if(confirm(question))
+		yes();
+	else
+		no();
+}	
+//вызов функции
+ask("Вам нравится JavaScript?",
+	function() {alert('Вы ответили, что Вам нравится JavaScript')},
+	function() {alert('Вы ответили, что Вам не нравится JavaScript')}
+);*/
+
+
+/*-------Функции-стрелки» или «стрелочные функции» (arrow functions)---------*/ 
+//(param1, param2) => expression;
+//(/param1, param2) => {statesments};*/
+
+/*-------1 example--------- 
+let sum = function(num1,num2) {
+	return num1+num2;
+}
+alert(sum(10,11));
+
+let sum1 = (num1,num2) => num1+num2;
+alert(sum1(15,16));*/
+
+/*-------2 example--------- 
+let age = prompt("Сколько Вам лет?", 18);
+let welcome = (age<18)  ?
+	() => alert('You are Child') :
+	() => alert('You are Adult');
+	
+welcome();	*/
+
+/*-------3 example--------- */
+function ask(question, yes, no) {
+	if(confirm(question))
+		yes();
+	else
+		no();
+}	
+//вызов функции
+
+ask('Вам нравится JavaScript?',
+	() => alert('Вы ответили, что Вам нравится JavaScript'),
+	() => alert('Вы ответили, что Вам не нравится JavaScript')
+);
+</script>
