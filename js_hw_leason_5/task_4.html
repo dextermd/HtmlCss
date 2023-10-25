@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="menu">
+            <button class="menu-button" onclick="openTab('tab1')">HTML</button>
+            <button class="menu-button" onclick="openTab('tab2')">CSS</button>
+            <button class="menu-button" onclick="openTab('tab3')">JS</button>
+        </div>
+
+    <div id="tab1" class="content active">
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 
+            to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
+            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+    </div>
+
+    <div id="tab2" class="content">
+        <p>
+            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. 
+            Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero 
+            are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+        </p>
+    </div>
+
+    <div id="tab3" class="content">
+        <p>
+            All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, 
+            making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, 
+            combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. 
+            The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+        </p>
+    </div>
+    </div>
+
+
+</body>
+</html>
+
+<style>
+
+    body{
+        background-color:antiquewhite;
+    }
+    .container {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(126, 128, 255);
+    }
+    .menu {
+        width: 100px;
+        cursor: pointer;
+        padding: 10px 20px;
+        margin: 5px;
+        display: inline-block;
+    }
+    .menu-button {
+        background-color: rgb(126, 128, 255);
+        color: white;
+        border: none;
+        padding: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        width: 100px;
+        display: inline-block;
+    }
+    .content {
+        margin: 5px;
+        padding: 10px;
+        background-color:antiquewhite;
+        width: 100%;
+        display: none;
+    }
+    .content.active {
+        display: block;
+    }
+
+</style>
+
+<script>
+
+    function openTab(tabName) {
+        let i, tabcontent;
+        tabcontent = document.getElementsByClassName("content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].classList.remove("active");
+        }
+        document.getElementById(tabName).classList.add("active");
+    }
+
+</script>

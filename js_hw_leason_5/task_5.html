@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="newsList">
+        <div class="news-item">
+            <span>Новость 1</span>
+            <button class="deleteButton">Удалить</button>
+            <p>
+                All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. 
+                It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
+                The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+            </p>
+        </div>
+        <div class="news-item">
+            <span>Новость 2</span>
+            <button class="deleteButton">Удалить</button>
+            <p>
+                All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. 
+                It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
+                The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+            </p>
+        </div>
+        <div class="news-item">
+            <span>Новость 3</span>
+            <button class="deleteButton">Удалить</button>
+            <p>
+                All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. 
+                It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
+                The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+            </p>
+        </div>
+</body>
+</html>
+
+<style>
+    .deleteButton{
+        align-items:end;
+    }
+</style>
+<script>
+    var deleteButtons = document.querySelectorAll('.deleteButton');
+
+    deleteButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var newsItem = this.parentElement;
+            newsItem.remove();
+        });
+    });
+</script>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- ----------------------------------------------------------------------------------------- -->
+    <!-- 
+        Задание 1
+        Создать html-страницу для генерации случайных чисел. На
+        странице должна быть кнопка, при нажатии на которую случайное
+        целое число от 0 до 100 выводится в div 
+    -->
+    <div>
+        <p class="pl-2">Random number:</p>
+        <p class="number pl-6" id="number" name="number"></p>
+        <button type="button" onclick="generateRandom()">Generate random number</button>
+    </div>
+
+
+</body>
+</html>
+
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color:antiquewhite;
+    }
+    .number{
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .pl-6{
+        padding-left: 60px;
+    }
+    .pl-2{
+        padding-left: 20px;
+    }
+
+</style>
+
+<script>
+
+    let min = 0;
+    let max = 100;
+
+    function generateRandom() {          
+        document.getElementById('number').innerText =  
+            Math.floor(Math.random() * ((max - min) + 1) + min);
+    }
+
+
+
+</script>

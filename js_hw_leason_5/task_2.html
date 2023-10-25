@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- ----------------------------------------------------------------------------------------- -->
+    <!-- 
+        Создать html-страницу с div, который занимает всю ширину
+        и высоту экрана. При движении мышкой внутри этого div, выводить текущие координаты мышки. При клике кнопкой мыши туда
+        же, выводить, какой именно кнопкой был совершен клик (правой
+        или левой).
+    -->
+    <div id="container"></div>
+    
+</body>
+</html>
+
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        background-color:antiquewhite;
+    }
+
+    #container {
+        width: 100%;
+        height: 100vh;
+        background-color:antiquewhite;
+    }
+    .coordinates {
+            position: absolute;
+            font-size: 18px;
+    }
+
+</style>
+
+<script>
+    let container = document.getElementById("container");
+
+    container.addEventListener("mousemove", function (event) {
+        let x = event.clientX;
+        let y = event.clientY;
+        let coordinatesDiv = document.querySelector(".coordinates");
+
+        if (!coordinatesDiv) {
+            coordinatesDiv = document.createElement("div");
+            coordinatesDiv.className = "coordinates";
+            container.appendChild(coordinatesDiv);
+        }
+
+        coordinatesDiv.textContent = "X = " + x + ", Y = " + y;
+        coordinatesDiv.style.left = x + "px";
+        coordinatesDiv.style.top = y - 20 + "px";
+    });
+
+    container.addEventListener("mousedown", function (event) {
+        let buttonClicked = "Left";
+        if (event.button === 2) {
+            buttonClicked = "Right";
+        }
+        alert("Mouse button clicked: " + buttonClicked);
+    });
+
+
+</script>
