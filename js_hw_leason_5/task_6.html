@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <progress id="progress_bar" max="100" value="0"></progress>
+    <br>
+    <button id="increase_button">Add 5 percent</button>
+</body>
+</html>
+
+<style>
+    body{
+        background-color:antiquewhite;
+        border-radius: none;
+    }
+
+
+</style>
+<script>
+    var progressBar = document.getElementById('progress_bar');
+    var increaseButton = document.getElementById('increase_button');
+
+    increaseButton.addEventListener('click', function() {
+        if (progressBar.value < 100) {
+            progressBar.value += 5;
+        }
+    });
+</script>
