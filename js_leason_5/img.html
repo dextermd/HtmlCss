@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        <input type="button" value="Like" id="like2" onclick="like()">
+    </form>
+
+    <br><br><br>
+
+    <h3>Задание 2. Измменение изображений.</h3>
+    <img src="images/picture1.gif" id="firstpicture" width="200px" height="200px" onmouseover="mouseOverPicture()" onmouseout="mouseOutPicture()" alt="">
+    <img src="images/picture2.gif" id="secondpicture" width="200px" height="200px" onmouseover="mouseOverPicture()" onmouseout="mouseOutPicture()" alt="">
+</body>
+</html>
+
+<style>
+
+</style>
+
+<script>
+    let i = 1;
+    
+    function like() {
+        document.getElementById('like2').value ='Like ' + i;
+        i++;
+    }
+
+    function mouseOverPicture(){
+        document.getElementById('secondpicture').src = 'images/picture1.gif'
+    }
+
+    function mouseOutPicture(){
+        document.getElementById('secondpicture').src = 'images/picture2.gif'
+    }
+
+</script>

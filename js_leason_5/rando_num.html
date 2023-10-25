@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <!--
+            Создать html-страницу для генерации случайных чисел. 
+            На странице должна быть кнопка, при нажатии на которую случайное целое число от 0 до 100 выводится в div.
+        -->
+
+        <div id="number1" class="dislay-number"></div>
+
+        <br>
+        <form name="random1">
+            <div>
+                <label for="minimum">MIN:</label>
+                <input type="text" id="minimum" value="0" name="minimum">
+            </div>
+
+            <br>
+
+            <div>
+                <label for="maximum">MAX:</label>
+                <input type="text" id="maximum" value="100" name="maximum">
+            </div>
+
+            <br>
+
+            <button type="button" onclick="generateRandom()"> Generate random number</button>
+        </form>
+</body>
+</html>
+
+<style>
+    
+    .dislay-number {
+        border: 1px solid black;
+        height: 50px;
+        width: 50px;
+    }
+
+</style>
+
+<script>
+
+    function generateRandom() {        
+        let min = Math.round(random1.minimum.value);
+        let max = Math.round(random1.maximum.value);
+        
+        document.getElementById('number1').innerText =  
+            Math.floor(Math.random() * ((max - min) + 1) + min);
+    }
+
+</script>

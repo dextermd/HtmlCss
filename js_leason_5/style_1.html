@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Поменять фон абзаца с текстом при нажатии на кнопкуChange background -->
+    <p id="p1">Hello world!</p>
+    <form name="form1">
+        <!-- <input type="button" value="Change background" id="but1" "> -->
+        <input type="button" value="Change background" id="but1">
+    </form>
+    
+    <br>
+
+    <div id="divColor"></div>
+
+    <br>
+
+    <!--меняем цвет на див-е, событие mousemove (перемещение курсора). Формат rgb(0,0,0) - 
+    1ое занчение всегда 127, 
+    второе - зависит от коррдинаты Х курсора мыши, 
+    третье - зависит от коррдинаты Y курсора мыши-->
+
+    <div id="divColor2"></div>
+
+    <br>
+
+    
+</body>
+
+</html>
+
+<style>
+    #divColor, #divColor2{
+        background-color: navy;
+        width: 200px;
+        height: 200px;
+    }
+
+</style>
+
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var button = document.getElementById("but1");
+            var p1 = document.getElementById("p1");
+
+
+        });
+
+        divColor.addEventListener('click', function() {
+            divColor.style.backgroundColor= 'rgb('+ 
+            Math.round(255 * Math.random()) + ',' + 
+            Math.round(255 * Math.random()) + ',' +
+            Math.round(255 * Math.random()) + ')';
+        });
+
+        divColor2.addEventListener('mousemove', function(event) {
+            divColor2.style.backgroundColor = 'rgb(127,'+ 
+            event.pageX % 255 + ',' +
+            event.pageY % 255 + ')';
+        });
+
+</script>

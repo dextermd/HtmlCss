@@ -81,4 +81,10 @@
         alert(event.target.nodeName);
     };
 
+    document.onclick = function (event) {
+        out.innerText = "Click detected over: " +
+        event.target.tagName;
+        console.log(event);
+    }
+
 </script>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Practica 2</title>
+<style>
+ .input {
+ background-image: url(like.jpg);
+ width: 116px;
+ height:36px;
+ border: 0;
+ color: blue;
+ text-align: center;
+ position: absolute;
+ top:20%;
+ left:40%;}
+</style>
+	</head>
+	<body>
+	
+	<script> 
+		 let i=0;
+		 
+				
+		function like() {
+		document.getElementById('inputId').value = 'Like'+ ' ' + i; /**/
+			i++;
+		}
+		</script>
+		
+		<h3>Задание 2. Изменение изображений</h3>
+		<img src='images/picture1.gif' id='firstpicture' width='200px' height='200px' onmouseover='mouseOverPicture()' onmouseout = 'mouseOutPicture()'>
+		<img src='images/picture2.gif' id='secondpicture' width='200px' height='200px' onmouseover='mouseOverPicture()' onmouseout = 'mouseOutPicture()'>
+		<script>
+		/*для того чтобы поменять картинку нам надо изменить свойство src. Событие на одном объекте может влиять на другой объект*/
+		function mouseOverPicture() { /*функции меняют src. При наведение и на первое изображение и на второе изображение, первая картинка никогда не меняется, меняется только вторая*/
+		document.getElementById('secondpicture').src = 'images/picture1.gif';
+		}
+		function mouseOutPicture() {
+		document.getElementById('secondpicture').src = 'images/picture2.gif';
+		
+		}
+		/*Усложняем задачу, при наведении на первую - меняется вторая, при наведении на вторую меняется первая. Решение: надо 4 разные функции - mouseOverPicture, mouseOverPicture1, mouseOutPicture, mouseOutPicture1*/
+		</script>
+		
