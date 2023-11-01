@@ -352,7 +352,43 @@
         padding-bottom: 30px;
     }
 
+    @media screen and (max-width: 768px) {
+    .blok, .blok-end {
+        flex-direction: column-reverse; 
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
 
+    .text-side {
+        padding: 10px;
+        margin: 10px;
+        order: 1;
+    }
+    .text-side2 {
+        padding: 10px;
+        margin: 10px;
+    }
+    .side2{
+        order: 1;
+    }
+
+    .side {
+        order: 2; 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .column {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .inner-content {
+        text-align: center;
+    }
+}
 
 
     .form-container {

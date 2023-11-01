@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="formCalculator">
+        <table class="table">
+            <tr>
+                <td colspan="5">
+                    <input type="text" value="0" name="calc">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="button" value="&#8592;" name="backspace"> <!-- Удаляет последний набранный символ -->
+                </td>
+                <td>
+                    <input type="button" value="CE" name="clearEntry"> <!-- Очиста последнего введеного значения -->
+                </td>
+                <td>
+                    <input type="button" value="C" name="clearAll"> <!-- Спрасывет все -->
+                </td>
+                <td>
+                    <input type="button" value="&plusmn;" name="plusMinus"> <!-- Меняет знак на противоположный -->
+                </td>
+                <td>
+                    <input type="button" value="&Sqrt;" name="square"> <!-- Корень -->
+                </td> 
+            </tr>
+
+
+            <tr>
+                <td>
+                    <input type="button" value="7" name="seven" onclick="get_value(this.value)">
+                </td>
+                <td>
+                    <input type="button" value="8" name="eight" onclick="get_value(this.value)">
+                </td>
+                <td>
+                    <input type="button" value="9" name="nine" onclick="get_value(this.value)">
+                </td>
+                <td>
+                    <input type="button" value="/" name="/" onclick="get_operator(this.value)">
+                </td>
+                <td>
+                    <input type="button" value="%" name="precent">
+                </td>
+            </tr>
+
+            
+            <tr>
+                <td>
+                    <input type="button" value="4" name="four" onclick="get_value(this.value)">
+                </td>
+                <td>
+                    <input type="button" value="5" name="five" onclick="get_value(this.value)">
+                </td>
+                <td>
+                    <input type="button" value="6" name="six" onclick="get_value(this.value)">
+                </td>
+                <td>
+                    <input type="button" value="*" name="mult" onclick="get_operator(this.value)">
+                </td>
+                <td>
+                    <input type="button" value="1/x" name="invers">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="button" value="1" name="one" onclick="get_value(this.value)">
+                </td>
+                <td>
+                    <input type="button" value="2" name="two" onclick="get_value(this.value)">
+                </td>
+                <td>
+                    <input type="button" value="3" name="tree" onclick="get_value(this.value)">
+                </td>
+                <td>
+                    <input type="button" value="-" name="minus" onclick="get_operator(this.value)">
+                </td>
+                <td rowspan="2">
+                    <input style="height: 106px;" type="button" value="=" name="equal" onclick="equal_f()">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="0" name="zero" onclick="get_value(this.value)">
+                </td>
+
+                <td>
+                    <input type="button" value="." name="dot">
+                </td>
+                <td>
+                    <input type="button" value="+" name="plus" onclick="get_operator(this.value)">
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+</html>
+
+<style>
+
+    *{
+        box-sizing: border-box; /* Убирает все лишнии отступы */
+    }
+    input{
+        width: 100%;
+        height: 50px;
+    }
+    table {
+        border: 1px solid black;
+    }
+    table td{
+        /* border: 1px solid black; */
+        width: 3em;
+        margin: 0.5em;    
+    }
+
+</style>
+
+<script>
+    let firstDigit = true;
+    let prevOper = ""; /* Предыдущий оператор */
+    let prevNumber = "";
+    let result = ""; /* Результат */
+
+    function get_value(val){
+        if(firstDigit){
+            if(val != 0)
+                firstDigit = false;
+
+            document.formCalculator.calc.value = val;
+            prevNumber = val;
+        }else{
+            document.formCalculator.calc.value += val;
+            prevNumber = val
+        }
+    }
+
+    /* function for all operator + - * / */
+    function get_operator(val) {
+
+        if(!firstDigit){
+            result = eval(result + prevOper + document.formCalculator.calc.value)
+            console.log(result)
+            firstDigit = true;
+            document.formCalculator.calc.value = result;
+            
+        }
+        prevOper = val;
+    }
+
+    function equal_f(){
+        document.formCalculator.calc.value = result;
+    }
+</script>
