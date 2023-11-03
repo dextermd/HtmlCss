@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <div class="myTitle">Press space</div>
+    <div id="gun"></div>
+    <div id="bullet"></div>
+    <div id="aim"></div>
+</html>
+
+<style>
+        
+    body {
+        font-family: Play, Arial, sans-serif;
+    }
+    
+    .myTitle {
+        font-size: 100px;
+        margin-bottom: 100px;
+    }
+    
+    #gun, #bullet, #aim {
+        position: absolute;
+        
+    }
+    
+    #bullet, #gun {
+        top: 200px;
+    }
+    
+    #bullet, #aim {
+         border-radius: 50%;
+    }
+    
+    #gun {
+        left 0;
+        background-color: blue;
+        width: 500px;
+        height: 200px;
+    }
+    #bullet {
+        left: 300px;
+        width: 200px;
+        height: 200px;
+         background: yellow;
+        z-index: 1;
+    }
+    
+    #aim {
+        left: 1600px;
+        background: red;
+        width: 250px;
+        height: 250px;
+        top: 175px;
+    }
+</style>
+
+<script>
+
+</script>

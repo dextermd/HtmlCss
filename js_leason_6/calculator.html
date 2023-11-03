@@ -19,16 +19,16 @@
                     <input type="button" value="&#8592;" name="backspace"> <!-- Удаляет последний набранный символ -->
                 </td>
                 <td>
-                    <input type="button" value="CE" name="clearEntry"> <!-- Очиста последнего введеного значения -->
+                    <input type="button" value="CE" name="clearEntry" onclick="clearEntryy()"> <!-- Очиста последнего введеного значения -->
                 </td>
                 <td>
-                    <input type="button" value="C" name="clearAll"> <!-- Спрасывет все -->
+                    <input type="button" value="C" name="clearAll" onclick="clearAlll()"> <!-- Спрасывет все -->
                 </td>
                 <td>
-                    <input type="button" value="&plusmn;" name="plusMinus"> <!-- Меняет знак на противоположный -->
+                    <input type="button" value="&plusmn;" name="plusMinus" onclick="changeSign()"> <!-- Меняет знак на противоположный -->
                 </td>
                 <td>
-                    <input type="button" value="&Sqrt;" name="square"> <!-- Корень -->
+                    <input type="button" value="&Sqrt;" name="square" onclick="sqrt()"> <!-- Корень -->
                 </td> 
             </tr>
 
@@ -47,7 +47,7 @@
                     <input type="button" value="/" name="/" onclick="get_operator(this.value)">
                 </td>
                 <td>
-                    <input type="button" value="%" name="precent">
+                    <input type="button" value="%" name="precent" onclick="precent1()">
                 </td>
             </tr>
 
@@ -66,7 +66,7 @@
                     <input type="button" value="*" name="mult" onclick="get_operator(this.value)">
                 </td>
                 <td>
-                    <input type="button" value="1/x" name="invers">
+                    <input type="button" value="1/x" name="invers" onclick="inversiveInput()">
                 </td>
             </tr>
 
@@ -84,7 +84,7 @@
                     <input type="button" value="-" name="minus" onclick="get_operator(this.value)">
                 </td>
                 <td rowspan="2">
-                    <input style="height: 106px;" type="button" value="=" name="equal" onclick="equal_f()">
+                    <input style="height: 106px;" type="button" value="=" name="equal" onclick="equaly()">
                 </td>
             </tr>
 
@@ -127,6 +127,7 @@
 </style>
 
 <script>
+
     let firstDigit = true;
     let prevOper = ""; /* Предыдущий оператор */
     let prevNumber = "";
@@ -145,6 +146,58 @@
         }
     }
 
+    function equaly() {
+        result = eval(result + prevOper + document.formCalculator.calc.value)
+        document.formCalculator.calc.value = result;
+    }
+
+    function clearEntryy() {
+        document.formCalculator.calc.value = '0';
+        firstDigit = true;
+    }
+
+    function clearAlll() {
+        firstDigit = true;
+        prevOper = "";
+        result = "";
+        document.formCalculator.calc.value = '0';
+    }
+
+    function changeSign() {
+        document.formCalculator.calc.value *= -1;
+        firstDigit = true;
+    }
+
+    function sqrt() {
+        document.formCalculator.calc.value = Math.sqrt(document.formCalculator.calc.value);
+        firstDigit = true;
+    }
+
+    function precent1() {
+        document.formCalculator.calc.value = document.formCalculator.calc.value * 0.01 * result;
+        firstDigit = true;
+    }
+    
+    function inversiveInput() {
+        document.formCalculator.calc.value = 1 / document.formCalculator.calc.value;
+        firstDigit = 1;
+    }
+
+    function backspace1(params) {
+        if (document.formCalculator.calc.value.length == 1)
+        {
+            document.formCalculator.calc.value = 0;
+        }
+        else {
+            document.formCalculator.calc.value = document.formCalculator.calc.value.substring(0,
+            document.formCalculator.calc.value.length -1);
+        }
+    }
+
+    function point() {
+        
+    }
+
     /* function for all operator + - * / */
     function get_operator(val) {
 
@@ -153,12 +206,8 @@
             console.log(result)
             firstDigit = true;
             document.formCalculator.calc.value = result;
-            
         }
         prevOper = val;
     }
 
-    function equal_f(){
-        document.formCalculator.calc.value = result;
-    }
 </script>

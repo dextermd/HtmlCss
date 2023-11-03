@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+		box-sizing: border-box;
+		}
+		
+		td{
+			border: 0;
+			width: 2em;
+			height: 2em;
+			margin: 0.3em;
+		}
+		input{
+			width: 100%;
+			height: 100%;
+		}
+		#calc1{
+			height: 85%;
+			width: 95%;
+		}
+	</style>
+</head>
+<body>
+
+	<form name="formCalculator">
+	<table border="1px solid black">
+		<tr>
+			<td colspan="5">
+				<!-- дисплей с вычислениями -->
+				<input id="calc" type="text" value="0" name="calc" readonly>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<!--удаляет последний набранный символ -->
+				<input type="button" value="&#8592;" name="backSpace" onclick="backSpace1()">
+			</td>
+			<td>
+				<!-- clear entry - очистка последнего введенного значения -->
+				<input type="button" value="CE" name="CE"
+				onclick="clearEntry()">
+			</td>
+			<td>
+				<!-- clear all - полная очистка -->
+				<input type="button" value="C" name="C" onclick="clearAll()">
+			</td>
+			<td>
+				<input type="button" value="&plusmn;" name="plusMinus" onclick="changeSign()">
+			</td>
+			<td>
+				<input type="button" value="&Sqrt;" name="squareRoot" onclick="sqrt()">
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<input type="button" value="7" name="seven" onclick="number1(this.value)">
+			</td>
+			<td>
+				<input type="button" value="8" name="eight" onclick="number1(this.value)">
+			</td>
+			<td>
+				<input type="button" value="9" name="nine" onclick="number1(this.value)">
+			</td>
+			<td>
+				<input type="button" value="/" name="division" onclick="operator(this.value)">
+			</td>
+			<td>
+				<input type="button" value="&percnt;" name="percent" onclick="percent1()">
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<input type="button" value="4" name="four" onclick="number1(this.value)">
+			</td>
+			<td>
+				<input type="button" value="5" name="five" onclick="number1(this.value)">
+			</td>
+			<td>
+				<input type="button" value="6" name="six" onclick="number1(this.value)">
+			</td>
+			<td>
+				<input type="button" value="&ast;" name="multiply" onclick="operator(this.value)">
+			</td>
+			<td>
+				<!-- кнопка - обратное число -->
+				<input type="button" value="1/x" name="inversion" onclick="inversiveInput()">
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<input type="button" value="1" name="one" onclick="number1(this.value)">
+			</td>
+			<td>
+				<input type="button" value="2" name="two" onclick="number1(this.value)">
+			</td>
+			<td>
+				<input type="button" value="3" name="three" onclick="number1(this.value)">
+			</td>
+			<td>
+				<input type="button" value="-" name="minus" onclick="operator(this.value)">
+			</td>
+			<td rowspan="2">
+				<input type="button" value="=" name="equal" onclick="equaly()">
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2">
+				<input type="button" value="0" name="zero" onclick="number1(this.value)">
+			</td>
+			<td>
+				<input type="button" value="." name="dot" onclick="point()">
+			</td>
+			<td>
+				<input type="button" value="+" name="plus" onclick="operator(this.value)">
+			</td>
+
+		</tr>
+	</table>
+	</form>
+
+
+	<script>
+		flag1 = 1; // первая цифра, flag1 = 0; - не первая
+		preOper = ""; // хранятся предыдущие операторы, тк они срабатывают только при нажатии последующих(чтобы сработал оператор, надо выбрать следующий оператор)
+		result = "";
+		
+	/*	let predCigra='';
+		let flag_r=0; //если записан результат
+	*/
+
+		function number1(x) { //ввод числа
+
+			if(flag1==1){ //если цифра первая, то она становится на место стандартного нуля
+			if(x!=0) //проверка для 0. Если введенная цифра - ноль, то ничего не меняется, т.е. если x!=0, то мы сбрасываем флаг flag1 = 0 и все остальные цифры конкатенируются
+			{flag1 = 0;} //остальные цифры не первые
+			document.formCalculator.calc.value = x; //функция для всех цифр
+			}
+			else { //в противном случае добавляется введенная цифра
+			document.formCalculator.calc.value += x; //2 действия = либо += Если цифра не первая, то тогда цифра прибавляется
+			}
+		}
+
+		// результат = предыдущий результат + оператор(+/*-) + введенное значение
+		function operator(str){ //функция должна быть у нескольких кнопок - + - * 
+
+			if(!flag1){
+				
+				result=eval(result + preOper + document.formCalculator.calc.value);
+				//результат = предыдущий результат + оператор + введенное значение
+				//Метод eval() выполняет JavaScript код, представленный строкой.
+				// eval('' +"" + '23') = eval('23') = 23
+				// eval(23 +"+" + '6') = eval("23+6") = 29
+		
+
+				//после каждого нового оператора в поле ввода выводится результат
+				flag1=1;//после ввода оператора разрешить вводить новое значение
+				document.formCalculator.calc.value = result;
+				}
+
+				preOper=str;//операторы +-*/ сохраняются в переменной
+			
+				/*if (!isFinite(document.formCalculator.calc.value)) /*деление на 0
+			 
+				{
+				document.formCalculator.calc.value = "Divide by zero error";
+				}*/
+		}
+
+
+
+/*function eguqly(){
+ if(flag_r==0){
+   predCifra = document.formCalc.calc.value;
+   result = eval(result + preOper + document.formCalc.calc.value);
+   document.formCalc.calc.value = result;
+   flag_r=1;
+   }
+   else{
+   result = eval(predCifra + preOper + document.formCalc.calc.value);
+   document.formCalc.calc.value = result;
+  }
+ }*/
+		function equaly(){
+			result = eval(result + preOper + document.formCalculator.calc.value);
+			console.log(result);
+			console.log(preOper);
+			document.formCalculator.calc.value = result;
+			flag1=1;
+		}
+		
+	function clearEntry(){ //3+6+4 - очищается только 4 и заменяется на 0
+			document.formCalculator.calc.value = '0';
+			// нажатая цифра заменит 0, так как она первая
+			flag1 = 1;
+		}
+
+		function clearAll(){ //очищает все
+			document.formCalculator.calc.value = '0';
+			preOper = ""; // обнуляем предыдущий оператор
+			result = "";
+			flag1 = 1; // опять первое число
+		}
+
+		function changeSign(){
+			document.formCalculator.calc.value *= -1;
+			flag1 = 1;
+			/*flag1 = 0; последующее введенное число будет конкатенироваться*/
+		}
+
+		function sqrt(){
+			document.formCalculator.calc.value = Math.sqrt(document.formCalculator.calc.value);
+			flag1 = 1;
+		}
+
+		function percent1(){
+			document.formCalculator.calc.value = 
+			document.formCalculator.calc.value * 0.01 * result;
+			flag1 = 1;
+		}
+
+		function inversiveInput(){
+			document.formCalculator.calc.value = 1 / document.formCalculator.calc.value;
+			flag1 = 1;
+		}
+
+
+		function backSpace1()
+		{
+		if(document.formCalculator.calc.value.length==1)
+		{
+		document.formCalculator.calc.value=0;
+		}
+		else
+		{
+			// использовать substring(start, end) - извлечение символов из строки
+			document.formCalculator.calc.value = 
+			document.formCalculator.calc.value.substring(0, document.formCalculator.calc.value.length - 1)};
+			
+		}
+
+
+		function point(){ //точка
+			//Метод includes() проверяет, содержит ли строка заданную подстроку, и возвращает, соответственно true или false. т.е. в нашем случае - если значение текстового поля включает точку
+
+			if(document.formCalculator.calc.value.includes('.') == false){ //если точки еще нет в числе и при этом вводимая цифра не первая 
+			document.formCalculator.calc.value += '.'; // то мы ее добавляем
+			flag1 = 0; //без этого действия если не вводя число нажать на точку, то после введения чисел поле будет очищаться
+			}
+			
+		/*	else if(flag1){  //если вводится первая цифра, а пользователь нажимает точку, то выводится 0.
+				document.formCalculator.calc.value = 0 + '.';
+				flag1 = 0;
+			}*/
+		}
+
+	</script>
+	
+</body>
+</html>
