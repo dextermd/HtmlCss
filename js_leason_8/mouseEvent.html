@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d1"></div>
+    <h1>Click on page and press akey</h1>
+    <h2 id="out"></h2>
+</body>
+</html>
+
+<style>
+    #d1 {
+        border: 2px solid gray;
+        height: 200px;
+        width: 200px;
+    }
+</style>
+
+<script>
+    document.body.onkeydown = function(e) {
+        let txt = "";
+        if(e.ctrlKey) txt += "Ctrl - ";
+        if(e.altKey) txt += "Alt - ";
+        if(e.shiftKey) txt += "Shift - ";
+        txt += e.key;
+        out.innerText = txt;
+    }
+    d1.onmousedown = function(event) {
+        let bgColor;
+        switch (event.which) {
+            case 1: // нажата левая кнопка мыши
+                bgColor = 'green';
+                break;
+            case 2: // нажата средняя кнопка мыши
+                bgColor = 'blue';
+                break;
+            case 3: // нажата средняя кнопка мыши
+                bgColor = 'tomato';
+                break;
+        }
+        d1.style.backgroundColor = bgColor;
+    }
+
+    // контекстное меню (правая кнопка мышки) обработчик событий oncontextmenu
+    d1.oncontextmenu = function () {
+        return false;
+    }
+</script>

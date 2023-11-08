@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<body onkeypress="spaceCheck(event)">
     <div class="myTitle">Press space</div>
     <div id="gun"></div>
     <div id="bullet"></div>
     <div id="aim"></div>
+</body>
 </html>
 
 <style>
@@ -36,7 +38,7 @@
     }
     
     #gun {
-        left 0;
+        left: 0;
         background-color: blue;
         width: 500px;
         height: 200px;
@@ -59,5 +61,31 @@
 </style>
 
 <script>
+    let bulletX = 300;
+    let checkFly = false;
 
+    function flyBullet() {
+        if(checkFly)
+        {
+            bulletX += 50;
+            if (bulletX >= 1600) 
+            {
+                bulletX = 300;
+                checkFly = false;
+            }else{
+                setTimeout(flyBullet, 30)
+            }
+
+            bullet.style.left = bulletX + "px"
+        }
+    }
+
+    function spaceCheck(event) {
+        console.log(event);
+        if(event.code = 'Space' && !checkFly)
+        {
+            checkFly = true;
+            flyBullet();
+        }
+    }
 </script>
