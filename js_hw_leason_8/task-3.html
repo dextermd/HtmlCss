@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footbal</title>
+</head>
+<body onclick="moveDiv(event)">
+    <div id="bool" class="animate"></div>
+</body>
+</html>
+
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        background-image: url(./image/futb.jpg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    #bool {
+        background-color: rgb(194, 140, 140);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .animate {
+    transition: left 1.3s ease, top 1.3s ease;
+}
+</style>
+
+<script>
+    
+    function moveDiv(event) {
+        let bool = document.getElementById('bool');
+        bool.style.left = event.pageX + 'px';
+        bool.style.top = event.pageY + 'px';
+    }
+
+</script>

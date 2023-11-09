@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+</head>
+<body>
+    <div id="book">
+        <ol>
+            <li>Выразительный JavaScript. Современное веб-программирование</li>
+            <li>Вы не знаете JS (серия книг)</li>
+            <li>JavaScript в примерах и задачах</li>
+            <li>Современный JavaScript для нетерпеливых</li>
+            <li>JavaScript для детей. Самоучитель по программированию</li>
+            <li>Учимся кодить на JavaScript</li>
+            <li>Как устроен JavaScript</li>
+            <li>Рефакторинг кода на JavaScript: улучшение проекта существующего кода</li>
+        </ol>
+    </div>
+</body>
+</html>
+
+<style>
+    body{
+        background-color: blanchedalmond;
+    }
+    #book {
+            font-family: Arial, sans-serif;
+        }
+
+        #book ol {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .red {
+            background-color: rebeccapurple;
+        }
+</style>
+
+<script>
+    const listItems = document.querySelectorAll('#book li');
+
+    listItems.forEach(item => {
+        item.addEventListener('mouseover', () => {
+            item.classList.add('red');
+        });
+
+        item.addEventListener('mouseout', () => {
+            item.classList.remove('red');
+        });
+    });
+</script>

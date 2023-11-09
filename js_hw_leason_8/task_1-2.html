@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        Задание 1
+        Создать html-страницу для ввода имени пользователя.
+        Необходимо проверять каждый символ, который вводит пользователь. Если он ввел цифру, то не отображать ее в input. 
+    -->
+
+    <form name="formName">
+        <label for="inputName">Enter your name (name cant contain digits):</label><br>
+        <input type="text" name="inputName" id="inputName">
+    </form>
+    <br><br><br>
+    <!-- 
+        Создать html-страницу с кнопкой Открыть и модальным
+        окном. На модальном окне должен быть текст и кнопка Закрыть.
+        Изначально модальное окно не отображается. При клике на
+        кнопку Открыть появляется модальное окно, на кнопку Закрыть –
+        исчезает. 
+    -->
+    
+    <button id="modalBtn">Open modal</button>
+    <div class="modalActive">
+        <strong class="txt">Hello from Modal Windows!</strong>
+        <button class="btn" id="closeBtn">Close</button>
+    </div>
+
+    <!-- 
+        Создать html-страницу с кнопкой Открыть и модальным
+        окном. На модальном окне должен быть текст и кнопка Закрыть.
+        Изначально модальное окно не отображается. При клике на
+        кнопку Открыть появляется модальное окно, на кнопку Закрыть –
+        исчезает. 
+    -->
+    
+</body>
+</html>
+
+<script>
+    let inputName = document.formName.inputName;
+    const modalButton = document.getElementById('modalBtn');
+    const closeButton = document.getElementById('closeBtn');
+    const modalActive = document.querySelector('.modalActive');
+    const modalBackground = document.querySelector('.modalBackground');
+
+    inputName.addEventListener("input", function() {
+        let inputValue  = inputName.value;
+        var inputReplace = inputValue.replace(/\d/g, '');
+        inputName.value = inputReplace;
+   })
+
+   modalButton.addEventListener('click', function() {
+            modalActive.style.display = 'block';
+            modalBackground.style.display = 'block';
+        });
+
+        closeButton.addEventListener('click', function() {
+            modalActive.style.display = 'none';
+            modalBackground.style.display = 'none';
+        });
+</script>
+
+<style>
+
+.modalActive {
+    position: absolute;
+    width: 400px;
+    height: 50px; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -180%); 
+    background-color: rgb(201, 250, 252);
+    cursor: default;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-end;
+    display: none;
+}
+.btn {
+    width: 300px;
+}
+.txt {
+    padding-bottom: 20px;
+}
+
+</style>
