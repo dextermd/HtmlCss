@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #draggable-circle {
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            border-radius: 50%;
+            position: absolute;
+            cursor: grab;
+        }
+    </style>
+    <title>Drag-and-Drop Example</title>
+</head>
+
+<body>
+
+    <div id="draggable-circle"></div>
+
+    <script>
+        var isDrag = false;
+        var ball = document.getElementById("draggable-circle");
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+        var radius = 25;
+
+        ball.addEventListener("mousedown", function(e) {
+            isDrag = true;
+            ball.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener("mousemove", function(e) {
+            if (isDrag) {
+                var posX = e.pageX - radius;
+                var posY = e.pageY - radius;
+
+                // Запрещаем выход за пределы окна
+                if (posX < 0) {
+                    posX = 0;
+                } else if (posX > width - 2 * radius) {
+                    posX = width - 2 * radius;
+                }
+
+                if (posY < 0) {
+                    posY = 0;
+                } else if (posY > height - 2 * radius) {
+                    posY = height - 2 * radius;
+                }
+
+                ball.style.left = posX + "px";
+                ball.style.top = posY + "px";
+            }
+        });
+
+        document.addEventListener("mouseup", function() {
+            isDrag = false;
+            ball.style.cursor = 'grab';
+        });
+    </script>
+
+</body>
+
+</html>

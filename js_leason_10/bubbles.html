@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+</body>
+</html>
+
+<style>
+    #div1 {
+        background-color:tomato; 
+        border:1px solid red; 
+        height:100px; 
+        width:100px;
+    }
+    #div2 {
+        background-color:lime; 
+        height:60px; 
+        width:60px; 
+        margin:20px;
+    }
+    </style>
+
+    <script>
+        // click, addEventListener()
+        div1.addEventListener('click', function() {
+            console.log('Click on div 1')
+        });
+        div2.addEventListener('click', function () {
+            console.log('Click on div 2')
+        });
+        document.addEventListener('click', function () {
+            console.log('Click on document')
+        });
+    </script>

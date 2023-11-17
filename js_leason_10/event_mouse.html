@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    X: <span id="coordX" style="font-size: 10px;"></span><br>
+    Y: <span id="coordY" style="font-size: 10px;"></span><br>
+</body>
+</html>
+
+<script>
+    // mousemove - движение мыши
+    // mousedown - нажатие левой кнопки миши
+    // mouseup   - отпускание левой кнопки мыши
+
+    document.onmousemove = function (event)
+    {
+        coordX.innerHTML = event.pageX;
+        coordY.innerHTML = event.pageY;
+    }
+
+    document.onmousedown = function (event)
+    {
+        if(event.which == 1) // если нажата левая кнопка мыши
+        {
+            coordX.style.fontSize = 26 + 'px';
+            coordY.style.fontSize = 26 + 'px';
+        }
+    }
+
+    document.onmouseup = function (event)
+    {
+        coordX.style.fontSize = 10 + 'px';
+        coordY.style.fontSize = 10 + 'px';
+    }
+
+    document.oncontextmenu = function (event) {
+        event.preventDefault();
+    }
+
+</script>
