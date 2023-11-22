@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        Метод «getElementsByName("theName")» производит поиск элементов по их имени, заданных HTML- атрибутом «name="theName"»;
+        Метод «getElementsByClassName("theClass")» ищет элементы по имени стилевого  класса,  указанного в атрибуте «class="theClass"»;
+        Метод «getElementsByTagName(«DIV»)» собирает элементы по имени HTML тега, которым элементы были созданы (<DIV></DIV>). document.querySelectorAll("LI")
+     -->
+    <div class="container">
+        <div id="d1" class="c1" name="n1">d1,c1,n1</div>
+        <div id="d2" class="c2" name="n1">d2,c2,n1</div>
+        <div id="d3" class="c1 c2">d3,c1,c2</div>
+        <p id="p1" class="c1">p1,c1</p>
+        <p id="p2" class="c2" name="n1">p2,c2,n1</p>
+    </div>
+
+    <div class="buttons">
+        <button onclick="findD1()" class="btn">id = d1</button>
+        <button onclick="findC1()" class="btn">class = c1</button> 
+        <button onclick="findP()" class="btn">tag = P</button> 
+        <button onclick="findN1()" class="btn">name = n1</button> 
+        <button onclick="clearAll()"class="btn">Clear</button> 
+    </div>
+
+
+</body>
+</html>
+
+<script>
+    function findD1() {
+        let myD1 = document.getElementById('d1');
+        myD1.style.background = "#d1e751"
+    }
+    function findC1() {
+        let myC1 = document.getElementsByClassName('c1');
+        for(let elem of myC1){
+            elem.style.background = '#e65432'
+        }
+    }
+    function findP() {
+        let myP = document.getElementsByTagName('p');
+
+        for(let elem of myP){
+            elem.style.background = '#c0addb'
+        }
+    }
+    function findN1() {
+        let myName = document.getElementsByName('n1');
+
+        for(let elem of myName){
+            elem.style.background = '#5492db'
+        }
+    }
+    function clearAll() {
+        let myElem = document.querySelectorAll('#d1, #d2, #d3, p');
+        
+        for(let elem of myElem){
+            elem.style.background = '#c7c7c7'
+        }
+     
+    }
+</script>
+
+<style>
+    body{
+        font-size: 20px;
+    }
+    .container{
+        display: flex;
+        justify-content: space-around;
+    }
+    .container div, .container p {
+        height: 150px;
+        width: 150px;
+        border: 2px solid blue;
+        margin: 20px;
+        background: #c7c7c7;
+        text-align: center;
+        vertical-align: middle;
+    }
+    p{
+        margin: 0px;
+    }
+    div, p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .buttons{
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-around;
+    }
+    button{
+        width: 150px;
+        height: 40px;
+        font-size: 20px;
+    }
+</style>

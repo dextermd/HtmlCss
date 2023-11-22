@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    x = 10; // Скалярная переменная
+    y = [5, 10, 15, 21]; // Массив
+    y[2]; // 15
+    console.log(y[2]);
+
+    // Способы создания обьектов
+    // 1-ый вариант создания пользовательского обьекта
+    let z = new Object();
+    console.log(z);
+
+    // 2-ой вариант создания пользовательского обьекта
+    let z2 = {};
+    console.log(z2);
+
+    let student = new Object();
+    student['name'] = 'Ivanov Ivan';
+    student['age'] = 33;
+    student['married'] = true;
+
+    console.log(student);
+    console.log(student['name']);
+
+    let student2 = {};
+    student2.name = 'Sidorov Sidor';
+    student2.age = 33;
+    student2.married = true;
+
+    console.log(student2);
+    console.log(student2.name);
+
+    //student.Surname Name = 'asdasd' error
+    //student['Surname Name'] = 'asdasd'
+
+    let student3 = {
+        surname: 'Karpov Karp',
+        age: 20,
+        married: false
+    };
+
+    console.log(student3);
+    console.log(student3.surname);
+
+    // Удаление свойства
+
+    delete student2.name;
+    console.log(student2)
+
+    // проверка есть ли свойство - конструкция .... in .....
+    if ('name' in student2) {
+        console.log("Yes")
+    }else{
+        console.log("No")
+    }
+
+    // Вложенные обьекты
+
+    let student4 = {
+        surname: "PP DD",
+        age: 20,
+        married: false,
+        teacher1: {
+            disc: 'HTML'
+        },
+        phone: ['1234', '4567']
+    }
+
+    console.log(student4);
+    console.log(student4.teacher1.name);
+    console.log(student4.phone[1]);
+
+    console.log("_______________________________________________________")
+    //Вывести значения всех обьектов for in
+
+    for (const key in student4) {
+        if (typeof student4[key] !== 'object') {
+            console.log(key + ': ' + student4[key]);
+        } else {
+            for (const key2 in student4[key]) {
+                console.log(' ' + key2 + ': ' + student4[key][key2]);
+            }
+        }
+    }
+        
+</script>

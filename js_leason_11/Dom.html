@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change DOM</title>
+</head>
+<body>
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="insertItem()">Insert Item</button>
+    <button onclick="removeItem()">Remove Item</button>
+
+</body>
+</html>
+
+<script>
+    // appendChild(еl) — добавляет дочерний узел «еl» в конец существующей коллекции дочерних узлов; 
+    // insertBefore(еl1, еl2) — вставляет узел «еl1» в коллекцию дочерних элементов перед узлом «еl2».
+    function addItem() {
+        let newItem = document.createElement('li');
+        // создаем элемент,потом добавляем
+        newItem.innerText = prompt("Введите новое значение");
+        list.appendChild(newItem);
+    }
+
+    function insertItem() {
+        let firstItem = list.childNodes[0];
+        let newItem = document.createElement('li');
+        // создаем элемент,потом добавляем
+        newItem.innerText = prompt("Введите новое значение");
+        list.insertBefore(newItem, firstItem);
+    }
+</script>
