@@ -1,0 +1,46 @@
+<script>
+    function sum(a,b) {
+        return a+b;
+    }
+    function d_sum(a,b) {
+        document.write(a+b)
+    }
+    setTimeout(function () {
+        document.write('Hello, world!')
+    }, 3000);
+    setTimeout(function(a,b) {
+        document.write(a+b)
+    },2000, 12,14);
+    
+    let timerId = setTimeout(function(){
+        document.write('Hello World!');
+    },);
+    console.log(`Before: timerId = ${timerId}`)
+
+    let id = setTimeout(function() {
+        document.write('Boom!')
+    }, 3000);
+    alert("id timer: " + id);
+
+    let iden = setTimeout(function(){
+        document.write('Boom1!')
+    }, 3000);
+    alert("iden timer: " + iden)
+
+    clearTimeout(timerId);
+    console.log(`After: timerId = ${timerId}`);
+
+    setTimeout('document.write(sum(1,2))', 3000); // 3 sec
+    setTimeout(d_sum, 3000, 11,122); // 3 sec
+
+    let idx = setInterval(IntervalFunc, 2000);
+    let counter = 0;
+    function IntervalFunc() {
+        if (counter == 3) {
+            clearInterval(idx);
+            return;
+        }
+        counter++;
+        alert("Boom");
+    } 
+</script>

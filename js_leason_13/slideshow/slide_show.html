@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show</title>
+</head>
+<body>
+    <img id="foto" src="images/flower1.jpg" width="280" height="133">
+
+    <form name="show">
+        <input type="button" name="button1" value="Начать слайд-шоу" onclick="index1=0; run();">
+        <input type="button" name="button2" value="Остановить слайд-шоу" onclick="stop();disabled">
+    </form>
+</body>
+</html>
+
+<script>
+    let arrPhoto=['images/flower1.jpg', 'images/flower2.jpg', 'images/flower3.jpg', 'images/flower4.jpg'];
+    let index1 = 0;
+    let timerId;
+
+    function run() {
+        document.show.button1.disabled = true ;
+        if (index1 == arrPhoto.length) {
+            index1 = 0;
+        }
+        document.show.button2.disabled = false;
+
+        document.getElementById('foto').src = arrPhoto[index1];
+        index1++;
+        //index1 %= arrPhoto.length;
+        timerId = setTimeout('run()', 1000)
+    }
+
+    function stop() {
+        document.show.button1.disabled = false;
+        if (document.show.button2.value == "Остановить слайд-шоу") {
+            clearTimeout(timerId);
+            document.show.button2.value = 'Продолжить слайд-шоу';
+        }else{
+            setTimeout('run()', 1000)
+            document.show.button2.value = "Остановить слайд-шоу"
+        }
+
+    }
+</script>
