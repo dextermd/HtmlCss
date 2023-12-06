@@ -1,0 +1,103 @@
+<script>
+
+// \t — табуляция
+let str = "Sun\t is going \\down\\";
+// Sun is going \down\ 
+//alert(str);
+
+// для вставки кавычек в строку надо использовать \" - символ backslash \ экранирование
+let str2 = "\"Yes\"";
+
+// на экране "Yes" 
+//alert(str2);
+
+//var x = 10; x1 = true; x2 = 'Hello world!';
+
+let y1 = 'Hello, world!';
+//console.log(y1);//вся строка
+//console.log(y1[4]);//буква o
+y1[4] = 'O';//хотим заменить индекс 4, o на большую букву O, не получится. Надо заменить полностью строку
+//console.log(y1);
+
+
+//методы строки
+//1. indexOf(chars[,start_index]) //ищет символы в строке слева-направо
+//2. lastIndexOf(chars[,start_index]) //ищет символы в строке справа -налева
+//3. toUpperCase()
+//4. toLowerCase()
+//5. substr(start[,length]) - с какой позиции начать, сколько символов
+//6. substring(start[,end]) - позиция, end - позиция окончания (не входит в результат)
+//7. split(' ') - разбить строку на элементы массива (разделитель), в итоге получится массив
+
+//indexOf(chars[,start_index]) //ищет символы в строке слева-направо
+//lastIndexOf(chars[,start_index]) //ищет символы в строке справа -налева
+
+let str1 = "earth and sun";
+let index = str1.indexOf("sun");
+ //значение индекса равно 10 
+//alert(index);
+index = str1.indexOf("moon");
+// значение индекса равно -1 так как moon нет в строке 
+//alert(index);
+
+
+let y2 = 'Hello, world!';
+//console.log(y2.toUpperCase());//большие буквы
+//console.log(y2.toLowerCase());//маленькие буквы*/
+
+
+
+//substr(start[,length]) //позволяют получить подстроку из строки, start - с какой позиции, length - сколько символов
+//substring(start[,end]) //позволяют получить подстроку из строки, start - с какой позиции, end - позиция окончания, не входит в результат
+
+let y3 = 'Hello, world!';
+//console.log(y3.substring(7,12));//world
+//console.log(y3.substr(7,5));//world
+
+//console.log(y3.substring(7,5));//выдаст , - ошибка, т.к. 1ое больше 2ого. Браузер поменял местами
+
+//split()
+
+//let y_array = y3.split(', '); //разбивает строку на массив
+//console.log(y_array);//массив с 2мя элементами
+
+//let y_array = y3.split('');//без пробелов
+//console.log(y_array);
+
+
+
+/*----------Кавычки-----------------*/
+console.log("Hello, 'world'!!!");//Hello, 'world'!!!
+
+
+//console.log("Hello, '" world"'!!!");//ошибка
+
+
+console.log("Hello, '\"world\"'!!!"); //Hello, '"world"'!!! экранирование кавычек - кавычки в кавычках 
+
+console.log(`Hello, '"world"'!!!`); //обратные кавычки не требуют экранирования
+
+//специальная конструкция ${имя_переменной}
+let test = 'our';
+console.log(`Hello, ${test} '"world"'!!!`);//Hello, our '"world"'!!!
+console.log('Hello, ' + test + ' \"world\"!!!');//если бы не было обратных кавычек, исп.бы конкатенацию	 Hello, our '"world"'!!!
+
+//${выражение} - вставляем выражение
+console.log(`1 + 2 = ${1+2}`); 
+
+//${функция} - вставляем функцию
+function sum(a,b) {return a+b;}
+console.log(`1 + 2 = ${sum(1,2)}`);
+
+
+//console.log("Hello, 
+			//world!!!"); //ошибка - enter внутри кавычек нельзя
+			
+//document.write("Hello, //ошибка - enter внутри кавычек нельзя
+//			world!!!");
+
+console.log(`Hello, 
+			world!!!`);//в обратных кавычках enter работает
+document.write(`Hello, 
+						world!!!`); // в document.write не работает
+</script>

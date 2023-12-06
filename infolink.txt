@@ -5,3 +5,5 @@ https://cssgradient.io/gradient-backgrounds/
 https://hcdev.ru/css/box-sizing/
 
 https://www.w3schools.com/cssref/css_selectors.php
+
+http://regexone.com

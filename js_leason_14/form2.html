@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+	<style>
+	#logForm{
+		background-color:#5599EE;
+		display:block;
+		
+		padding:20px;
+		width:	400px;
+	}
+	#formText{
+		color:	white;
+		float:	left;
+		font-size:	40px;
+		font-weight:bold;
+		height:	200px;
+		width:	200px;
+	}
+	.rounded{
+		border-radius:15px;
+		border-width: 0;
+		display:block;
+		height:	30px;
+		margin:	10px 0;
+		padding:0;
+		width:	170px;
+	}
+	#enter{
+		background-color:green;
+		color:		white;
+		text-align:	center;
+	}
+	</style>
+</head>
+<body>
+	<form method = "get" action="" name='logForm' enctype='application/x-www-form-urlencoded' id="logForm">
+		<div id="formText">LogForm</div>
+		<select class="rounded" name="city">
+			<option value="Kiev">Kiev</option>
+			<option value="Nikolaev">Nikolaev</option>
+			<option value="Odessa">Odessa</option>
+			<option value="Kiev">Kiev</option>
+			<option value="Nikolaev">Nikolaev</option>
+			<option value="Odessa">Odessa</option>
+			<option value="Kiev">Kiev</option>
+			<option value="Nikolaev">Nikolaev</option>
+			<option value="Odessa">Odessa</option>
+			<option value="" disabled selected hidden> City</option>
+		</select>
+		<input type="text" name="login" class="rounded" placeholder=" login" title="begin with letter">
+		
+		<input type="password" name="password" class="rounded" placeholder=" password"/>
+		<br />
+		
+		<input type="submit" id="enter" class="rounded" value="ENTER"/>
+		
+	</form>
+	
+<script>
+	
+let pattern1 = /\w+ \d+/g; //литерал, g - флаг
+/*var pattern2 = new RegExp("/\w+ \d+/","g");*/  //конструктор
+
+let str1 = "hello 324 ";
+
+if (pattern1.test(str1)){ //test - метод шаблона pattern1
+	console.log('true');
+};
+
+if (pattern1.exec(str1)){  //exec - метод шаблона pattern1
+	console.log('true');
+};
+
+if (str1.match(pattern1)){ //match - метод объекта String
+	console.log('true');
+};
+ </script>	
+ 
+ <script>
+ 
+ /*	Login
+	1. латинские буквы
+	2. цифры
+	3. точка не на границе (нельзя начинать и заканчивать с точки)
+	4. первый символ - всегда буква (не цифра)
+	5. разрешаем точку в середине, но только одну
+ 
+ */
+
+ var pattern2 = /^[a-zA-Z]+[a-zA-Z0-9]*\.?[a-zA-Z0-9]+$/;
+ 
+ 
+ 
+ 
+
+/*функция для кнопки submit - при нажатии на кнопку должна быть проверка*/
+document.getElementById('enter').addEventListener('click', 	function() {
+	var str1 = document.logForm.login.value;
+	console.log(str1);
+		if(pattern2.test(str1)){
+			alert('Login true');
+			}
+		else 
+			alert('Login false');
+		}
+);	
+
+
+/*
+Password:
+1. обязательное поле
+2. минимум 6 символов, максимум  15
+3. обязательно должны быть: хотя бы 1 цифра, хотя бы 1 маленькая буква, хотя бы 1 большая буква, хотя бы один спецсимвол
+4.только латинские буквы*/
+
+/*
+var pattern2 = /^([0-9]+[a-z]+[A-Z]+[\!\@\#\$\%\&\(\)]+){6,15}$/;
+этот шаблон означает именно такой порядок: вначале хотя бы одна цифра, потом хотя бы одна маленькая буква.....
+*/
+
+/*чтобы был произвольный порядок символов надо использовать ?=что-то   (lookahead)
+	(?=.*[0-9]) 	проверяет что в строке есть как минимум один из перечмсленных символов - есть ли цифра после каких то символов
+	
+	?=.*[a-z]	есть ли маленькая буква после каких то символов */
+/*	?=что-то  -  поиск с заглядыванием вперед	*/
+
+/*шаблон для пароля*/
+let pattern3 = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\!\@\#\$\%\&\(\)])([0-9a-zA-Z\!\@\#\$\%\&\(\)]){6,15}$/;
+/* (?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\!\@\#\$\%\&\(\)]) - эта конструкция не ищет на совпадение. На совпадение (шаблон) ищет последние [] - [0-9a-zA-Z\!\@\#\$\%\&\(\)]*/
+
+/*функция для кнопки submit - при нажатии на кнопку должна быть проверка*/
+document.getElementById('enter').addEventListener('click', 	function() {
+	let str2 = document.logForm.password.value;
+	if (pattern3.test(str2)) {
+		alert('Password Correct');
+	}
+	else
+		alert('Password InCorrect');
+});	
+ </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+MIME - Multipurpose Internet Mail Extensions 1.0
+
+FTP			- протокол передачи файлов
+
+IMAP, POP3		- протокол передачи почты
+
+HTTP	-	протокол передачи гипертекста (hyper text transfer protocol)
+
+HTTP - 2 формата сообщений: 
+	1.HTTP-запрос
+	2.HTTP-ответ
+	
+Каждый формат сообщений состоит из 3х частей:
+1. строка запроса, если это запрос и строка ответа, если это ответ
+	POST /add_user.php HTTP/1.1 
+2. раздел заголовков
+	Host: 123.45.67.89
+	User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0)
+    	Gecko/20100101 Firefox/47.0
+	Content-Type: application/x-www-form-urlencoded 
+	Content-Length: 30 
+пустая строка
+3. данные(тело сообщения)
+	city=Kiev&login=sss&password=qwe
+	
+URL-кодирование:
+sdf #$%		sdf+%23%24%25, где 
+			+ - пробел, %23 - #, %24 - $, %25 -%  
+	
+пробел может заменен либо на +, либо на %20 
+	
+	

@@ -1,0 +1,86 @@
+<script>
+/*обычная функция - ответ сразу
+	function sum(a,b){
+		return a+b;
+	}
+	document.write(sum(1,2));
+*/
+
+/*функция установки таймера - setTimeout(функция/код, задержка, аргумент1, аргумент2, …)*/
+/*Задержка — время задержки для таймера. После истечения времени будет запущена функция/код из первого аргумента. Задержка указывается в миллисекундах. Для справки: 1000 миллисекунд = 1 секунда.*/
+
+/*обычная функция - ответ не сразу, через 3 секунды	
+	function sum(a,b){
+		return a+b;
+	}
+	setTimeout('document.write(sum(1,2))',3000);	//3 секунды
+*/
+
+/*функция установки таймера - setTimeout(функция/код, задержка, аргумент1, аргумент2, …)
+function sum(a,b){
+		document.write(a+b);
+	}
+	//setTimeout((sum(11,12)),3000); //работает, не совсем по синтаксису
+	
+	
+	setTimeout(sum,3000,11,122);//другой способ записи метода setTimeout, правильный
+*/
+
+/*встраивание функций без параметров в таймер
+	setTimeout(function() {							
+		document.write('Hello, world!');
+	},3000);
+*/
+/*встраивание функций с параметрами в таймер
+	setTimeout(function(a,b) {
+		document.write(a+b);
+	},2000,12,13);		///12,13 - фактические аргументы
+*/
+
+
+/*Идентификаторы таймера, остановка таймера
+
+	let timerId = setTimeout(function(){
+		document.write('Hello, world!');
+	},2000);
+	console.log(`Before: timerId = ${timerId}`); //Таймер (1) в консоле выводится сразу, а текст на стр-це через 2 секунды
+	
+	let id = setTimeout(function(){ document.write("Boom!")},3000); //Таймер (2)
+	alert("id timer: "+id);
+	
+	let iden = setTimeout(function(){ document.write("Boom1!")},3000);//Таймер (3)
+	alert("iden timer: "+iden);
+	
+	
+	//метод clearTimeout() останавливает таймер
+	clearTimeout(timerId); //останавливаем таймер - метод clearTimeout - текст не выводится
+	console.log(`After: timerId = ${timerId}`);
+	
+	clearTimeout(id); //останавливаем таймер - текст не выводится
+	console.log(id);
+	
+	clearTimeout(iden); //останавливаем таймер - текст не выводится
+	console.log(iden);
+*/
+	
+/*-----setInterval-----*/
+/*Функция, указанная в первом параметре будет вызываться каждые две секунды. В этом коде мы не вызвали clearInterval поэтому окно сообщения с надписью Boom будет вызываться каждые две секунды, пока окно или вкладка браузера не будет закрыта. Синтаксис setInterval(функция/код, интервал_времени, аргумент1, аргумент2, …)
+	setInterval(function(){
+		alert("Boom!");
+		},2000);
+*/
+/*Делаем новую функцию. Теперь добавим вызов clearInterval. Окно сообщения будет показано три раза, после чего мы остановим интервальную функцию.*/ 
+	let id = setInterval(IntervalFunc,2000); 
+	let counter = 0;
+	function IntervalFunc(){ 
+		if(counter == 3){
+			clearInterval(id); //остановка таймера по идентификатору
+			return;
+		}
+	counter++; 
+	alert("Boom");
+}
+
+
+	
+</script>
