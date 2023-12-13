@@ -1,0 +1,39 @@
+<form>
+	Choose transport<br>
+	Car<input type='radio' name='transport' value='1'><br>
+	Boat<input type='radio' name='transport' value='2'><br>
+	Bus<input type='radio' name='transport' value='3'><br><br>
+	Choose direction<br>
+	Chisinau<input type='radio' name='direction' value='1'><br>
+	Odessa<input type='radio' name='direction' value='2'><br>
+	Kiev<input type='radio' name='direction' value='3'><br>
+	<input type='submit' name='go' value='send form'>
+</form>	<!--transport=3&direction=2&go=send+form-->
+	<p id="out">document.cookie:</p>
+
+<script>
+document.cookie = "registered=User; counter=1; path=/; expires=Fri,29 December 2023 00:00:00 GMT;
+document.cookie = "city=Comrat; path=/; expires=Fri,29 December 2023 00:00:00 GMT";
+window.out.innerHTML += document.cookie; 			/*не работает, нет протокола HTTP*/
+console.log("document.cookie="+document.cookie); 	/*не работает, нет протокола HTTP*/
+
+/*Для того чтобы выполнить упражнения по работе с Cookie необходимо либо создать настоящий домен (локальный или сетевой), либо воспользоваться онлайн HTML — редакторами, например, «Tryit Editor» от «w3schools.com»*/
+
+/* Чтобы представить cookie в виде имя=значение*/
+let cookies1 = document.cookie; //получаем данные о Cookie и сохраняем их в переменной 
+let array1 = cookies1.split('; '); //разбиваем строку методом «split» по разделителю «; » (не забываем пробел). В результате получаем массив «s» из строк в виде «имя=значение».
+
+/*Полученные данные об имени и значении Cookie сохраняем в объекте «cookieObject» как пару «ключ-значение». Ключом выступает имя Cookie, сохраненное в первой части разделенной строки «values1[0]», значением —  вторая часть «values1[1]» (cookieObject[values1[0]]=values1[1];*/
+let cookieObject = {};
+
+for ( let i=0; i<array1.length; i++)
+{
+	let values1 = array1[i].split('=');
+	cookieObject[values1[0]]=values1[1];
+}
+
+for ( let x in cookieObject)
+{
+	window.out.innerHTML += "<br><br>" + x + ' = ' + cookieObject[x];
+}
+</script>
