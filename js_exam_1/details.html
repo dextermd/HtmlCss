@@ -1,0 +1,89 @@
+<!-- details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+</head>
+<body>
+    <h1 class="text-center">Film info</h1>
+    <div id="searchId">
+        <div id="movieDetailsContainer"></div>
+    </div>
+
+
+    <script>
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const imdbID = urlParams.get('imdbID');
+
+        function fetchMovieDetails() {
+            const request = new XMLHttpRequest();
+            request.onreadystatechange = function() {
+                if (request.readyState === 4 && request.status === 200) {
+                    const movieDetails = JSON.parse(request.responseText);
+
+                    const movieDetailsContainer = document.getElementById("movieDetailsContainer");
+                    movieDetailsContainer.innerHTML = `
+                        <img src="${movieDetails.Poster}" alt="${movieDetails.Title}">
+                        <p>Title: ${movieDetails.Title}</p>
+                        <p>Released: ${movieDetails.Released}</p>
+                        <p>Country: ${movieDetails.Country}</p>
+                        <p>Director: ${movieDetails.Director}</p>
+                        <p>Writer: ${movieDetails.Writer}</p>
+                        <p>Actors: ${movieDetails.Actors}</p>
+                        <p>Awards: ${movieDetails.Awards}</p>
+
+                    `;
+                }
+            };
+
+            request.open("GET", `http://www.omdbapi.com/?apikey=60b97a72&i=${imdbID}`, true);
+            request.send();
+        }
+
+        fetchMovieDetails();
+    </script>
+</body>
+</html>
+
+<style>
+    html{
+        background-color: #fbf2e9;
+    }
+    #searchId {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }   
+    .text-center{
+        text-align: center;
+    }
+    #movieDetailsContainer{
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .movie-container img {
+        max-width: 40%;
+        height: auto;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    .movie-container button {
+        background-color: #3498db;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
